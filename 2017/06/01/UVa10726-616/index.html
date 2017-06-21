@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="好像有个视频介绍了这个水手与猴子与椰子的奇怪的数学问题，有兴趣的同学可以去看一看：Monkeys and Coconuts 然后回归到这2个以此为背景的题目，首先可以观察题目给出的表格： 有$S$个水手，$M$个猴子，设最后一轮留下来的椰子数为$a(1)$，那么有$a(1)=a(2)-\frac{a(2)-M}{s}-M$，反过来有$a(2)=a(1\times \frac{s}{s-1} +M$">
+    <meta name="description" content="好像有个视频介绍了这个水手与猴子与椰子的奇怪的数学问题，有兴趣的同学可以去看一看：Monkeys and Coconuts 然后回归到这2个以此为背景的题目，首先可以观察题目给出的表格： 有$S$个水手，$M$个猴子，设最后一轮留下来的椰子数为$a(1)$，那么有$a(1)=a(2)-\frac{a(2)-M}{s}-M$，反过来有$a(2)=a(1)\times \frac{s}{s-1} +M">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UVa10726 &amp; UVa616 Coco Monkey &amp; Coconuts, Revisited(数列递推)">
 <meta property="og:url" content="http://yoursite.com/2017/06/01/UVa10726-616/index.html">
 <meta property="og:site_name" content="nonamenotitle&#39;s blog">
-<meta property="og:description" content="好像有个视频介绍了这个水手与猴子与椰子的奇怪的数学问题，有兴趣的同学可以去看一看：Monkeys and Coconuts 然后回归到这2个以此为背景的题目，首先可以观察题目给出的表格： 有$S$个水手，$M$个猴子，设最后一轮留下来的椰子数为$a(1)$，那么有$a(1)=a(2)-\frac{a(2)-M}{s}-M$，反过来有$a(2)=a(1\times \frac{s}{s-1} +M$">
-<meta property="og:updated_time" content="2017-06-21T16:53:36.895Z">
+<meta property="og:description" content="好像有个视频介绍了这个水手与猴子与椰子的奇怪的数学问题，有兴趣的同学可以去看一看：Monkeys and Coconuts 然后回归到这2个以此为背景的题目，首先可以观察题目给出的表格： 有$S$个水手，$M$个猴子，设最后一轮留下来的椰子数为$a(1)$，那么有$a(1)=a(2)-\frac{a(2)-M}{s}-M$，反过来有$a(2)=a(1)\times \frac{s}{s-1} +M">
+<meta property="og:updated_time" content="2017-06-21T16:55:48.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UVa10726 &amp; UVa616 Coco Monkey &amp; Coconuts, Revisited(数列递推)">
-<meta name="twitter:description" content="好像有个视频介绍了这个水手与猴子与椰子的奇怪的数学问题，有兴趣的同学可以去看一看：Monkeys and Coconuts 然后回归到这2个以此为背景的题目，首先可以观察题目给出的表格： 有$S$个水手，$M$个猴子，设最后一轮留下来的椰子数为$a(1)$，那么有$a(1)=a(2)-\frac{a(2)-M}{s}-M$，反过来有$a(2)=a(1\times \frac{s}{s-1} +M$">
+<meta name="twitter:description" content="好像有个视频介绍了这个水手与猴子与椰子的奇怪的数学问题，有兴趣的同学可以去看一看：Monkeys and Coconuts 然后回归到这2个以此为背景的题目，首先可以观察题目给出的表格： 有$S$个水手，$M$个猴子，设最后一轮留下来的椰子数为$a(1)$，那么有$a(1)=a(2)-\frac{a(2)-M}{s}-M$，反过来有$a(2)=a(1)\times \frac{s}{s-1} +M">
     
     
         
@@ -133,7 +133,7 @@
   <div class="content" itemprop="articleBody">
     <p>好像有个视频介绍了这个水手与猴子与椰子的奇怪的数学问题，有兴趣的同学可以去看一看：<a href="https://www.youtube.com/watch?v=U9qU20VmvaU" target="_blank" rel="external">Monkeys and Coconuts</a></p>
 <p>然后回归到这2个以此为背景的题目，首先可以观察题目给出的表格：</p>
-<p>有$S$个水手，$M$个猴子，设最后一轮留下来的椰子数为$a(1)$，那么有$a(1)=a(2)-\frac{a(2)-M}{s}-M$，反过来有$a(2)=a(1\times \frac{s}{s-1} +M$，也就是$a(i)=a({i-1})\times \frac{s}{s-1} +M$。</p>
+<p>有$S$个水手，$M$个猴子，设最后一轮留下来的椰子数为$a(1)$，那么有$a(1)=a(2)-\frac{a(2)-M}{s}-M$，反过来有$a(2)=a(1)\times \frac{s}{s-1} +M$，也就是$a(i)=a({i-1})\times \frac{s}{s-1} +M$。</p>
 <p>由此想到经典的求等比数列递推的方法：设$b(i)=a(i+k)$，然后因为公比$q= \frac{s}{s-1}$，所以设$b(i)=q \times b({i-1})$，有$a(i)+k=\frac{s}{s-1} \times (a({i-1})+k)$，划开有$k\times \frac{s}{s-1} -k=M$，得$k=M \times (s-1)$。</p>
 <p>由于有$b(i)=b({i-1}) \times q$，$q=\frac{s}{s-1}$，于是$S$个人以后有$b({s+1})= {(\frac{s}{s-1})}^s \times (a(1)+M\times (s-1))$，由于$\begin{cases}</p>
 <p>b(i)=a(i)+k\</p>
