@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="蜂窝的样子这题坑了我好长时间…建图方法问了某神犇，然后发现他建的图我无法求出解（因为我太辣鸡了吧），然后就自己改了图，大概长这个鬼样子： 按照蜂窝建成的网格图的样子建图原理就是，原蜂窝中相邻的也要相邻，把六边形转化为网格里的形式，就是要使得至少每个点相邻的六个点在网格中可到达。在这个图中，只要是有一个点相接的格子，都是可到达的，也就是说，以下六个方向为可达的点： $$(1,1),(0,2),(-1">
+    <meta name="description" content="这题坑了我好长时间…建图方法问了某神犇，然后发现他建的图我无法求出解（因为我太辣鸡了吧），然后就自己改了图，大概长这个鬼样子： 建图原理就是，原蜂窝中相邻的也要相邻，把六边形转化为网格里的形式，就是要使得至少每个点相邻的六个点在网格中可到达。在这个图中，只要是有一个点相接的格子，都是可到达的，也就是说，以下六个方向为可达的点： $$(1,1),(0,2),(-1,1),(1,-1),(0,-2),">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UVa808 Bee Breeding(坐标转换技巧)">
 <meta property="og:url" content="http://yoursite.com/2017/05/29/UVa808/index.html">
 <meta property="og:site_name" content="nonamenotitle&#39;s blog">
-<meta property="og:description" content="蜂窝的样子这题坑了我好长时间…建图方法问了某神犇，然后发现他建的图我无法求出解（因为我太辣鸡了吧），然后就自己改了图，大概长这个鬼样子： 按照蜂窝建成的网格图的样子建图原理就是，原蜂窝中相邻的也要相邻，把六边形转化为网格里的形式，就是要使得至少每个点相邻的六个点在网格中可到达。在这个图中，只要是有一个点相接的格子，都是可到达的，也就是说，以下六个方向为可达的点： $$(1,1),(0,2),(-1">
+<meta property="og:description" content="这题坑了我好长时间…建图方法问了某神犇，然后发现他建的图我无法求出解（因为我太辣鸡了吧），然后就自己改了图，大概长这个鬼样子： 建图原理就是，原蜂窝中相邻的也要相邻，把六边形转化为网格里的形式，就是要使得至少每个点相邻的六个点在网格中可到达。在这个图中，只要是有一个点相接的格子，都是可到达的，也就是说，以下六个方向为可达的点： $$(1,1),(0,2),(-1,1),(1,-1),(0,-2),">
 <meta property="og:image" content="https://owarisunezeko.files.wordpress.com/2017/05/breding.jpg">
 <meta property="og:image" content="https://owarisunezeko.files.wordpress.com/2017/05/wange1.jpg">
-<meta property="og:updated_time" content="2017-06-24T17:01:10.468Z">
+<meta property="og:updated_time" content="2017-06-24T17:02:49.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UVa808 Bee Breeding(坐标转换技巧)">
-<meta name="twitter:description" content="蜂窝的样子这题坑了我好长时间…建图方法问了某神犇，然后发现他建的图我无法求出解（因为我太辣鸡了吧），然后就自己改了图，大概长这个鬼样子： 按照蜂窝建成的网格图的样子建图原理就是，原蜂窝中相邻的也要相邻，把六边形转化为网格里的形式，就是要使得至少每个点相邻的六个点在网格中可到达。在这个图中，只要是有一个点相接的格子，都是可到达的，也就是说，以下六个方向为可达的点： $$(1,1),(0,2),(-1">
+<meta name="twitter:description" content="这题坑了我好长时间…建图方法问了某神犇，然后发现他建的图我无法求出解（因为我太辣鸡了吧），然后就自己改了图，大概长这个鬼样子： 建图原理就是，原蜂窝中相邻的也要相邻，把六边形转化为网格里的形式，就是要使得至少每个点相邻的六个点在网格中可到达。在这个图中，只要是有一个点相接的格子，都是可到达的，也就是说，以下六个方向为可达的点： $$(1,1),(0,2),(-1,1),(1,-1),(0,-2),">
 <meta name="twitter:image" content="https://owarisunezeko.files.wordpress.com/2017/05/breding.jpg">
     
     
@@ -134,8 +134,8 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p><img src="https://owarisunezeko.files.wordpress.com/2017/05/breding.jpg" alt="image"><br>蜂窝的样子<br>这题坑了我好长时间…建图方法问了某神犇，然后发现他建的图我无法求出解（因为我太辣鸡了吧），然后就自己改了图，大概长这个鬼样子：</p>
-<p><img src="https://owarisunezeko.files.wordpress.com/2017/05/wange1.jpg" alt="image"><br>按照蜂窝建成的网格图的样子<br>建图原理就是，原蜂窝中相邻的也要相邻，把六边形转化为网格里的形式，就是要使得至少每个点相邻的六个点在网格中可到达。在这个图中，只要是有一个点相接的格子，都是可到达的，也就是说，以下六个方向为可达的点：</p>
+    <p><img src="https://owarisunezeko.files.wordpress.com/2017/05/breding.jpg" alt="蜂窝的样子"><br>这题坑了我好长时间…建图方法问了某神犇，然后发现他建的图我无法求出解（因为我太辣鸡了吧），然后就自己改了图，大概长这个鬼样子：</p>
+<p><img src="https://owarisunezeko.files.wordpress.com/2017/05/wange1.jpg" alt="按照蜂窝建成的网格图的样子"><br>建图原理就是，原蜂窝中相邻的也要相邻，把六边形转化为网格里的形式，就是要使得至少每个点相邻的六个点在网格中可到达。在这个图中，只要是有一个点相接的格子，都是可到达的，也就是说，以下六个方向为可达的点：</p>
 <p>$$(1,1),(0,2),(-1,1),(1,-1),(0,-2),(-1,-1)$$</p>
 <p>但是实际上如果要求两点间距离，肯定不能去这样搜索，那会超时。所以考虑直接通过坐标加减求得答案。</p>
 <p>假定给你的点为$a,b$，设$a(x_a,y_a) b(x_b,y_b)$，记$ \triangle x=| x_a-x_b |$，$ \triangle y=|y_a-y_b |$，那么我们观察网格图，无论怎么移动，$x$坐标都是加减$1$的，同时在加减$1$的过程中我们会发现$y$也会加减$1$，那么，对于不在同一个$x$上，也不在同一个$y$上的点，我们需要</p>
