@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="雅礼集训的时候讲过树上$Nim$的样子，然而这还是第一次遇到…然后附一下证明。 首先根据$sg$定理，一棵树的$sg$值是它的所有子树的$sg$值的抑或和。听上去好像很简单，但是仔细一想的话会发现，单独只有一个节点的树$sg$为0，若一棵树只有一个结点，那抑或起来就还是$0$，但是明显的只有一个结点的树是必胜态，$sg=1$。我们发现对于一棵树只有一个子节点的情况，$sg$值为$1$，于是假定对于">
+    <meta name="description" content="雅礼集训的时候讲过树上$Nim$的样子，然而这还是第一次遇到…然后附一下证明。 首先根据$sg$定理，一棵树的$sg$值是它的所有子树的$sg$值的异或和。听上去好像很简单，但是仔细一想的话会发现，单独只有一个节点的树$sg$为0，若一棵树只有一个结点，那异或起来就还是$0$，但是明显的只有一个结点的树是必胜态，$sg=1$。我们发现对于一棵树只有一个子节点的情况，$sg$值为$1$，于是假定对于">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AtCoder GrandContest017 D Game On Tree(树上Nim)">
 <meta property="og:url" content="http://yoursite.com/2017/07/10/atcoder-grand017D/index.html">
 <meta property="og:site_name" content="nonamenotitle&#39;s blog">
-<meta property="og:description" content="雅礼集训的时候讲过树上$Nim$的样子，然而这还是第一次遇到…然后附一下证明。 首先根据$sg$定理，一棵树的$sg$值是它的所有子树的$sg$值的抑或和。听上去好像很简单，但是仔细一想的话会发现，单独只有一个节点的树$sg$为0，若一棵树只有一个结点，那抑或起来就还是$0$，但是明显的只有一个结点的树是必胜态，$sg=1$。我们发现对于一棵树只有一个子节点的情况，$sg$值为$1$，于是假定对于">
-<meta property="og:updated_time" content="2017-07-12T16:04:08.011Z">
+<meta property="og:description" content="雅礼集训的时候讲过树上$Nim$的样子，然而这还是第一次遇到…然后附一下证明。 首先根据$sg$定理，一棵树的$sg$值是它的所有子树的$sg$值的异或和。听上去好像很简单，但是仔细一想的话会发现，单独只有一个节点的树$sg$为0，若一棵树只有一个结点，那异或起来就还是$0$，但是明显的只有一个结点的树是必胜态，$sg=1$。我们发现对于一棵树只有一个子节点的情况，$sg$值为$1$，于是假定对于">
+<meta property="og:updated_time" content="2017-07-13T01:25:56.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AtCoder GrandContest017 D Game On Tree(树上Nim)">
-<meta name="twitter:description" content="雅礼集训的时候讲过树上$Nim$的样子，然而这还是第一次遇到…然后附一下证明。 首先根据$sg$定理，一棵树的$sg$值是它的所有子树的$sg$值的抑或和。听上去好像很简单，但是仔细一想的话会发现，单独只有一个节点的树$sg$为0，若一棵树只有一个结点，那抑或起来就还是$0$，但是明显的只有一个结点的树是必胜态，$sg=1$。我们发现对于一棵树只有一个子节点的情况，$sg$值为$1$，于是假定对于">
+<meta name="twitter:description" content="雅礼集训的时候讲过树上$Nim$的样子，然而这还是第一次遇到…然后附一下证明。 首先根据$sg$定理，一棵树的$sg$值是它的所有子树的$sg$值的异或和。听上去好像很简单，但是仔细一想的话会发现，单独只有一个节点的树$sg$为0，若一棵树只有一个结点，那异或起来就还是$0$，但是明显的只有一个结点的树是必胜态，$sg=1$。我们发现对于一棵树只有一个子节点的情况，$sg$值为$1$，于是假定对于">
     
     
         
@@ -130,14 +130,15 @@
 
   <div class="content" itemprop="articleBody">
     <p>雅礼集训的时候讲过树上$Nim$的样子，然而这还是第一次遇到…然后附一下证明。</p>
-<p>首先根据$sg$定理，一棵树的$sg$值是它的所有子树的$sg$值的抑或和。听上去好像很简单，但是仔细一想的话会发现，单独只有一个节点的树$sg$为0，若一棵树只有一个结点，那抑或起来就还是$0$，但是明显的只有一个结点的树是必胜态，$sg=1$。我们发现对于一棵树只有一个子节点的情况，$sg$值为$1$，于是假定对于$1$个结点，它的子树对他的影响是该子树的$sg$值$+1$。</p>
+<p>首先根据$sg$定理，一棵树的$sg$值是它的所有子树的$sg$值的异或和。听上去好像很简单，但是仔细一想的话会发现，单独只有一个节点的树$sg$为0，若一棵树只有一个结点，那异或起来就还是$0$，但是明显的只有一个结点的树是必胜态，$sg=1$。我们发现对于一棵树只有一个子节点的情况，$sg$值为$1$，于是假定对于$1$个结点，它的子树对他的影响是该子树的$sg$值$+1$。</p>
 <ul>
 <li>对于只有一个节点的情况，显然成立。</li>
 <li>对于一个节点为根，仅有一个结点作为子树的情况，显然成立。</li>
 <li>假设对于$n$结点的一子树成立，它的$sg=mex \lbrace  b_1,b_2,b_3…\rbrace $，那么整棵树的$sg’=mex \lbrace 0,b_1+1,b_2+1,b_3+1… \rbrace$(因为单独一个结点的$sg$为0)，而$mex \lbrace 0,b_1+1,b_2+1,b_3+1…\rbrace =mex \lbrace  b_1,b_2,b_3…\rbrace +1$故$sg’=sg+1$，得证。</li>
 </ul>
-<p>于是就只需要递归的去求解各个子树的$Nim$值，再$+1$抑或就好了。</p>
+<p>于是就只需要递归的去求解各个子树的$Nim$值，再$+1$异或就好了。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100000</span>+<span class="number">5</span>;</div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span> &gt; g[maxn];</div><div class="line"><span class="keyword">int</span> sg[maxn];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> from,<span class="keyword">int</span> to)</span></span></div><div class="line">&#123;</div><div class="line">    g[from].push_back(to);</div><div class="line">    g[to].push_back(from);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> v,<span class="keyword">int</span> fa)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(g[v].size()==<span class="number">1</span> &amp;&amp; fa==g[v][<span class="number">0</span>]) <span class="keyword">return</span> sg[v]=<span class="number">0</span>;</div><div class="line">    sg[v]=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;(<span class="keyword">int</span>)g[v].size();i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> u=g[v][i];</div><div class="line">        <span class="keyword">if</span>(u!=fa) sg[v]=sg[v] xor (<span class="number">1</span>+dfs(u,v));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> sg[v];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)</div><div class="line">    &#123;<span class="keyword">int</span> from,to;<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;from,&amp;to);addedge(from,to);&#125;</div><div class="line">    dfs(<span class="number">1</span>,<span class="number">-1</span>);</div><div class="line">    <span class="keyword">if</span>(sg[<span class="number">1</span>]) <span class="built_in">printf</span>(<span class="string">"Alice\n"</span>);</div><div class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Bob\n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
   </div>
 </article>
 
