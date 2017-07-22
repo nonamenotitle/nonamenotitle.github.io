@@ -9,10 +9,10 @@
     <meta name="description" content="题意：给定$n$,$k$，再给定一个序列，定义好的集合是一个集合里所有的数之和大于等于$k$；序列如果序列中一个数$x$在所有包含它的好的子集中，去掉这个$x$这些子集也是好的，那么这个数就是不必要的数。求不必要的数的个数。 这个题好像很多提交是$\mathcal O(n)$水过的，然而我并不能证明这种贪心，所以记录一下$O(n^2logn)$的$dp$。 首先我们可以发现，如果一个数是不必要的，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AtCoder R70 D No Need">
-<meta property="og:url" content="http://yoursite.com/2017/07/15/atcoder-regular070D/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/07/21/atcoder-regular070D/index.html">
 <meta property="og:site_name" content="nonamenotitle&#39;s blog">
 <meta property="og:description" content="题意：给定$n$,$k$，再给定一个序列，定义好的集合是一个集合里所有的数之和大于等于$k$；序列如果序列中一个数$x$在所有包含它的好的子集中，去掉这个$x$这些子集也是好的，那么这个数就是不必要的数。求不必要的数的个数。 这个题好像很多提交是$\mathcal O(n)$水过的，然而我并不能证明这种贪心，所以记录一下$O(n^2logn)$的$dp$。 首先我们可以发现，如果一个数是不必要的，">
-<meta property="og:updated_time" content="2017-07-22T06:17:26.316Z">
+<meta property="og:updated_time" content="2017-07-22T06:28:29.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AtCoder R70 D No Need">
 <meta name="twitter:description" content="题意：给定$n$,$k$，再给定一个序列，定义好的集合是一个集合里所有的数之和大于等于$k$；序列如果序列中一个数$x$在所有包含它的好的子集中，去掉这个$x$这些子集也是好的，那么这个数就是不必要的数。求不必要的数的个数。 这个题好像很多提交是$\mathcal O(n)$水过的，然而我并不能证明这种贪心，所以记录一下$O(n^2logn)$的$dp$。 首先我们可以发现，如果一个数是不必要的，">
@@ -81,16 +81,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2017/07/15/atcoder-regular070D/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&text=AtCoder R70 D No Need"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&is_video=false&description=AtCoder R70 D No Need"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=AtCoder R70 D No Need&body=Check out this article: http://yoursite.com/2017/07/15/atcoder-regular070D/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&name=AtCoder R70 D No Need&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2017/07/21/atcoder-regular070D/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&text=AtCoder R70 D No Need"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&is_video=false&description=AtCoder R70 D No Need"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AtCoder R70 D No Need&body=Check out this article: http://yoursite.com/2017/07/21/atcoder-regular070D/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&name=AtCoder R70 D No Need&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -118,7 +118,7 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2017-07-14T16:37:08.000Z" itemprop="datePublished">2017-07-15</time>
+        <time datetime="2017-07-20T16:37:08.000Z" itemprop="datePublished">2017-07-21</time>
     </div>
 
 
@@ -166,16 +166,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2017/07/15/atcoder-regular070D/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&text=AtCoder R70 D No Need"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&is_video=false&description=AtCoder R70 D No Need"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=AtCoder R70 D No Need&body=Check out this article: http://yoursite.com/2017/07/15/atcoder-regular070D/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2017/07/15/atcoder-regular070D/&name=AtCoder R70 D No Need&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2017/07/21/atcoder-regular070D/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&text=AtCoder R70 D No Need"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&is_video=false&description=AtCoder R70 D No Need"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=AtCoder R70 D No Need&body=Check out this article: http://yoursite.com/2017/07/21/atcoder-regular070D/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&title=AtCoder R70 D No Need"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2017/07/21/atcoder-regular070D/&name=AtCoder R70 D No Need&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
