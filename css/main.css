@@ -401,7 +401,7 @@ table>tbody>tr:nth-of-type(odd) {
   background-color: #f9f9f9;
 }
 table>tbody>tr:hover {
-  background-color: #404040;
+  background-color: #0d0d0d;
 }
 caption,
 th,
@@ -1216,7 +1216,7 @@ pre .javascript .function {
   margin-left: -2px;
   width: 4px;
   height: 100%;
-  background: #404040;
+  background: #0d0d0d;
   z-index: -1;
 }
 @media (max-width: 767px) {
@@ -1600,7 +1600,7 @@ pre .javascript .function {
 .site-author-name {
   margin: 5px 0 0;
   text-align: center;
-  color: #404040;
+  color: #0d0d0d;
   font-weight: normal;
 }
 .site-description {
@@ -1677,7 +1677,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #91daff;
+  background: #6c90e2;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1707,7 +1707,7 @@ pre .javascript .function {
   color: #d3d3d3;
 }
 .sidebar-nav li:hover {
-  color: #404040;
+  color: #0d0d0d;
 }
 .page-post-detail .sidebar-nav-toc {
   padding: 0 5px;
@@ -2477,7 +2477,7 @@ body {
   background: #4d4d4d;
 }
 .header {
-  background: #404040;
+  background: #0d0d0d;
 }
 .header-inner {
   padding: 25px 0 20px;
@@ -2671,7 +2671,7 @@ body {
 }
 .posts-expand .post-tags a {
   padding: 1px 5px;
-  background: #404040;
+  background: #0d0d0d;
   border-bottom: none;
 }
 .posts-expand .post-tags a:hover {
@@ -2758,7 +2758,7 @@ body {
 .footer {
   margin-top: 80px;
   padding: 10px 0;
-  background: #404040;
+  background: #0d0d0d;
   color: #666;
 }
 .footer-inner {
