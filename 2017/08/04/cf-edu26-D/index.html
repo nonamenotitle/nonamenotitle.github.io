@@ -252,6 +252,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-comments">
+          <a href="/comments/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments-o"></i> <br />
+            
+            Comments
+          </a>
+        </li>
+      
 
       
         <li class="menu-item menu-item-search">
@@ -429,8 +439,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/23/cf85d/" rel="next" title="CodeForces 85D Sum of Medians(treap)">
-                <i class="fa fa-chevron-left"></i> CodeForces 85D Sum of Medians(treap)
+              <a href="/2017/07/23/la5645/" rel="next" title="UVALive5645 Black Box(普通treap)">
+                <i class="fa fa-chevron-left"></i> UVALive5645 Black Box(普通treap)
               </a>
             
           </div>
@@ -691,7 +701,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "";
+    var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -893,7 +903,7 @@
 
                   // select top N slices in content
 
-                  var upperBound = parseInt('5');
+                  var upperBound = parseInt('100');
                   if (upperBound >= 0) {
                     slicesOfContent = slicesOfContent.slice(0, upperBound);
                   }
@@ -960,7 +970,7 @@
             }
           }
 
-          if ('auto' === 'manual') {
+          if ('auto' === 'auto') {
             input.addEventListener('input', inputEventFunction);
           } else {
             $('.search-icon').click(inputEventFunction);
