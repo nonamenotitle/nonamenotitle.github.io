@@ -109,16 +109,13 @@
 
 
 
-<meta name="description" content="题意：给定$n$,$k$，再给定一个序列，定义好的集合是一个集合里所有的数之和大于等于$k$；序列如果序列中一个数$x$在所有包含它的好的子集中，去掉这个$x$这些子集也是好的，那么这个数就是不必要的数。求不必要的数的个数。 这个题好像很多提交是$\mathcal O(n)$水过的，然而我并不能证明这种贪心，所以记录一下$O(n^2logn)$的$dp$。 首先我们可以发现，如果一个数是不必要的，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AtCoder R70 D No Need">
-<meta property="og:url" content="http://yoursite.com/2017/07/21/atcoder-regular070D/index.html">
+<meta property="og:title" content="nonamenotitle&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/2017/10/11/terr/index.html">
 <meta property="og:site_name" content="nonamenotitle&#39;s blog">
-<meta property="og:description" content="题意：给定$n$,$k$，再给定一个序列，定义好的集合是一个集合里所有的数之和大于等于$k$；序列如果序列中一个数$x$在所有包含它的好的子集中，去掉这个$x$这些子集也是好的，那么这个数就是不必要的数。求不必要的数的个数。 这个题好像很多提交是$\mathcal O(n)$水过的，然而我并不能证明这种贪心，所以记录一下$O(n^2logn)$的$dp$。 首先我们可以发现，如果一个数是不必要的，">
-<meta property="og:updated_time" content="2017-07-22T06:28:29.889Z">
+<meta property="og:updated_time" content="2017-10-11T05:25:09.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AtCoder R70 D No Need">
-<meta name="twitter:description" content="题意：给定$n$,$k$，再给定一个序列，定义好的集合是一个集合里所有的数之和大于等于$k$；序列如果序列中一个数$x$在所有包含它的好的子集中，去掉这个$x$这些子集也是好的，那么这个数就是不必要的数。求不必要的数的个数。 这个题好像很多提交是$\mathcal O(n)$水过的，然而我并不能证明这种贪心，所以记录一下$O(n^2logn)$的$dp$。 首先我们可以发现，如果一个数是不必要的，">
+<meta name="twitter:title" content="nonamenotitle&#39;s blog">
 
 
 
@@ -146,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/21/atcoder-regular070D/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/11/terr/"/>
 
 
 
 
 
-  <title>AtCoder R70 D No Need | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -324,8 +321,8 @@
   
   
 
-  <article class="post post-type-atcoder " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/21/atcoder-regular070D/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/terr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nonamenotitle">
@@ -342,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AtCoder R70 D No Need</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -354,8 +351,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-21T00:37:08+08:00">
-                2017-07-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-11T13:25:09+08:00">
+                2017-10-11
               </time>
             
 
@@ -366,6 +363,20 @@
 
           
 
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/11/terr/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/10/11/terr/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
           
 
           
@@ -387,13 +398,7 @@
       
 
       
-        <p>题意：<br>给定$n$,$k$，再给定一个序列，定义好的集合是一个集合里所有的数之和大于等于$k$；序列如果序列中一个数$x$在所有包含它的好的子集中，去掉这个$x$这些子集也是好的，那么这个数就是不必要的数。求不必要的数的个数。</p>
-<p>这个题好像很多提交是$\mathcal O(n)$水过的，然而我并不能证明这种贪心，所以记录一下$O(n^2logn)$的$dp$。</p>
-<p>首先我们可以发现，如果一个数是不必要的，那么所有小于等于它的数也是不必要的。证明：如果一个数不必要，那么比他小的数可以代替它进入所有的子集，并且比他小的数被去掉后肯定和也大于$k$，所以这个数也不必要。</p>
-<p>这样就会发现如果有$x$个数不必要，那么肯定是最小的$x$个数。</p>
-<p>考虑二分，确定不必要的数有几个，然后进行$O(n^2)$的动态规划判断即可。如何判断这个数是否是必要的呢？如果去掉这个数$x$以后我们可以得到任意一个$[k-x,k)$的数，我们就能判断这个数不是不必要的，因为这表示至少存在一个子集是需要这个数的参与才能变为好的子集的。</p>
-<p>代码<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">5000</span>+<span class="number">5</span>;</div><div class="line"><span class="keyword">int</span> n,k;</div><div class="line"><span class="keyword">int</span> a[maxn];</div><div class="line"><span class="keyword">bool</span> dp[maxn];</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> mid)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(a[mid]&gt;=k) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="keyword">sizeof</span>(dp));</div><div class="line">    dp[<span class="number">0</span>]=<span class="literal">true</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(i==mid) <span class="keyword">continue</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=k;j&gt;=<span class="number">0</span>;j--)&#123;</div><div class="line">            <span class="keyword">if</span>(!dp[j]) <span class="keyword">continue</span>;</div><div class="line">            <span class="keyword">if</span>(j+a[i]&lt;=k) dp[j+a[i]]=<span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=max(k-a[mid],<span class="number">0</span>);i&lt;k;i++)</div><div class="line">        <span class="keyword">if</span>(dp[i]) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;k);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</div><div class="line">    sort(a+<span class="number">1</span>,a+<span class="number">1</span>+n);</div><div class="line">    <span class="keyword">int</span> l=<span class="number">0</span>,r=n;</div><div class="line">    <span class="keyword">while</span>(r-l&gt;<span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">int</span> mid=l+(r-l+<span class="number">1</span>)/<span class="number">2</span>;</div><div class="line">        <span class="keyword">if</span>(cal(mid)) l=mid;</div><div class="line">        <span class="keyword">else</span> r=mid<span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,l);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
+        
       
     </div>
 
@@ -429,8 +434,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/15/bzoj1230/" rel="next" title="bzoj1230 [Usaco2008 Nov]lites 开关灯(线段树)">
-                <i class="fa fa-chevron-left"></i> bzoj1230 [Usaco2008 Nov]lites 开关灯(线段树)
+              <a href="/2017/10/11/test/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -438,10 +443,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/22/la3831/" rel="prev" title="UVALive3831 Double Queue(普通treap)">
-                UVALive3831 Double Queue(普通treap) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -465,6 +466,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -658,6 +665,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 95670, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 95670, xid: "2017/10/11/terr/"});
 		
 
 		(function() {
@@ -1023,32 +1032,7 @@
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script>
-
-
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -1066,6 +1050,11 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
+
+  
+
+  
   
 
 
