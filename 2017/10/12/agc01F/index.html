@@ -93,7 +93,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="atcoder," />
 
 
 
@@ -109,16 +109,17 @@
 
 
 
-<meta name="description" content="大概又是个treap1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991">
+<meta name="description" content="考虑一个排列的反排列（$p_i=a$，则$q_a=i$，q为p的反排列）。元排列的问题就能变为在反排列中每次交换相邻的两个数，并且它们要满足差不小于k，使得最终1的位置尽量靠前，然后2的位置尽量靠前，依此类推。 记元排列为P，反排列为Q，最小字典序的Q一定对应最小字典序的P，求出最小字典序后在i前面的数一定都是比i小或者比i大但位置差小于k且在原来Q中就在i前面的数。这样的话就能建一张图表示最终排">
+<meta name="keywords" content="atcoder">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UVALive5645 Black Box(普通treap)">
-<meta property="og:url" content="http://yoursite.com/2017/07/23/la5645/index.html">
+<meta property="og:title" content="agc01F Wide Swap">
+<meta property="og:url" content="http://yoursite.com/2017/10/12/agc01F/index.html">
 <meta property="og:site_name" content="nonamenotitle&#39;s blog">
-<meta property="og:description" content="大概又是个treap1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991">
-<meta property="og:updated_time" content="2017-07-23T06:15:07.711Z">
+<meta property="og:description" content="考虑一个排列的反排列（$p_i=a$，则$q_a=i$，q为p的反排列）。元排列的问题就能变为在反排列中每次交换相邻的两个数，并且它们要满足差不小于k，使得最终1的位置尽量靠前，然后2的位置尽量靠前，依此类推。 记元排列为P，反排列为Q，最小字典序的Q一定对应最小字典序的P，求出最小字典序后在i前面的数一定都是比i小或者比i大但位置差小于k且在原来Q中就在i前面的数。这样的话就能建一张图表示最终排">
+<meta property="og:updated_time" content="2017-10-17T06:09:42.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UVALive5645 Black Box(普通treap)">
-<meta name="twitter:description" content="大概又是个treap1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991">
+<meta name="twitter:title" content="agc01F Wide Swap">
+<meta name="twitter:description" content="考虑一个排列的反排列（$p_i=a$，则$q_a=i$，q为p的反排列）。元排列的问题就能变为在反排列中每次交换相邻的两个数，并且它们要满足差不小于k，使得最终1的位置尽量靠前，然后2的位置尽量靠前，依此类推。 记元排列为P，反排列为Q，最小字典序的Q一定对应最小字典序的P，求出最小字典序后在i前面的数一定都是比i小或者比i大但位置差小于k且在原来Q中就在i前面的数。这样的话就能建一张图表示最终排">
 
 
 
@@ -146,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/23/la5645/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/12/agc01F/"/>
 
 
 
 
 
-  <title>UVALive5645 Black Box(普通treap) | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>agc01F Wide Swap | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -324,8 +325,8 @@
   
   
 
-  <article class="post post-type-la " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/23/la5645/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/12/agc01F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nonamenotitle">
@@ -342,7 +343,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">UVALive5645 Black Box(普通treap)</h1>
+          <h1 class="post-title" itemprop="name headline">agc01F Wide Swap</h1>
         
 
         <div class="post-meta">
@@ -354,8 +355,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-23T00:37:08+08:00">
-                2017-07-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-12T22:37:08+08:00">
+                2017-10-12
               </time>
             
 
@@ -366,6 +367,20 @@
 
           
 
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/12/agc01F/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/10/12/agc01F/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
           
 
           
@@ -387,8 +402,10 @@
       
 
       
-        <p>大概又是个treap<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxm=<span class="number">3000000</span>+<span class="number">5</span>;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></div><div class="line">    <span class="keyword">int</span> v,r,siz;</div><div class="line">    node* ch[<span class="number">2</span>];</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> s=<span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span>(ch[<span class="number">0</span>]!=<span class="literal">NULL</span>) s+=ch[<span class="number">0</span>]-&gt;siz;</div><div class="line">        <span class="keyword">if</span>(ch[<span class="number">1</span>]!=<span class="literal">NULL</span>) s+=ch[<span class="number">1</span>]-&gt;siz;</div><div class="line">        siz=s;</div><div class="line">    &#125;</div><div class="line">    node(<span class="keyword">int</span> x)&#123;</div><div class="line">        <span class="keyword">this</span>-&gt;v=x;</div><div class="line">        <span class="keyword">this</span>-&gt;r=rand();</div><div class="line">        <span class="keyword">this</span>-&gt;siz=<span class="number">1</span>;</div><div class="line">        <span class="keyword">this</span>-&gt;ch[<span class="number">0</span>]=<span class="keyword">this</span>-&gt;ch[<span class="number">1</span>]=<span class="literal">NULL</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> x)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(x==v) <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> x&lt;v?<span class="number">0</span>:<span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">node* rt;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(node* &amp;o,<span class="keyword">int</span> d)</span></span></div><div class="line">&#123;</div><div class="line">    node* k=o-&gt;ch[d^<span class="number">1</span>];</div><div class="line">    o-&gt;ch[d^<span class="number">1</span>]=k-&gt;ch[d];</div><div class="line">    k-&gt;ch[d]=o;</div><div class="line">    o-&gt;maintain();</div><div class="line">    k-&gt;maintain();</div><div class="line">    o=k;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(node* &amp;o,<span class="keyword">int</span> x)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(o==<span class="literal">NULL</span>)&#123;</div><div class="line">        o=<span class="keyword">new</span> node(x);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">int</span> d=x&lt;o-&gt;v?<span class="number">0</span>:<span class="number">1</span>;</div><div class="line">        insert(o-&gt;ch[d],x);</div><div class="line">        <span class="keyword">if</span>(o-&gt;ch[d]-&gt;r &gt; o-&gt;r) rotate(o,d^<span class="number">1</span>);</div><div class="line">        o-&gt;maintain();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">kth</span><span class="params">(node* &amp;o,<span class="keyword">int</span> k)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(o==<span class="literal">NULL</span> || o-&gt;siz&lt;k || k==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    <span class="keyword">int</span> s=o-&gt;ch[<span class="number">0</span>]==<span class="literal">NULL</span>?<span class="number">0</span>:o-&gt;ch[<span class="number">0</span>]-&gt;siz;</div><div class="line">    <span class="keyword">if</span>(k==s+<span class="number">1</span>) <span class="keyword">return</span> o-&gt;v;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(k&lt;=s) <span class="keyword">return</span> kth(o-&gt;ch[<span class="number">0</span>],k);</div><div class="line">    <span class="keyword">else</span> <span class="keyword">return</span> kth(o-&gt;ch[<span class="number">1</span>],k-s<span class="number">-1</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(node* &amp;o)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(o==<span class="literal">NULL</span>) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">if</span>(o-&gt;ch[<span class="number">0</span>]!=<span class="literal">NULL</span>) print(o-&gt;ch[<span class="number">0</span>]);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"v=%d r=%d siz=%d || "</span>,o-&gt;v,o-&gt;r,o-&gt;siz);</div><div class="line">    <span class="keyword">if</span>(o-&gt;ch[<span class="number">1</span>]!=<span class="literal">NULL</span>) print(o-&gt;ch[<span class="number">1</span>]);</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> n,m;</div><div class="line"><span class="keyword">int</span> a[maxm],u[maxm];</div><div class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span> &gt; req;</div><div class="line"><span class="keyword">int</span> kas=<span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;kas);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> z=<span class="number">0</span>;z&lt;kas;z++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(z&gt;=<span class="number">1</span>) <span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">        <span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</div><div class="line">        <span class="built_in">memset</span>(u,<span class="number">0</span>,<span class="keyword">sizeof</span>(u));</div><div class="line">        rt=<span class="literal">NULL</span>;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;u[i]);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=m;i&gt;=<span class="number">1</span>;i--) req.push(u[i]);</div><div class="line">        <span class="keyword">int</span> rnk=<span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">        &#123;</div><div class="line">            insert(rt,a[i]);</div><div class="line">            <span class="keyword">while</span>(req.size() &amp;&amp; rt-&gt;siz==req.top())&#123;</div><div class="line">                req.pop();</div><div class="line">                rnk++;</div><div class="line">                <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,kth(rt,rnk));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
+        <p>考虑一个排列的反排列（$p_i=a$，则$q_a=i$，q为p的反排列）。元排列的问题就能变为在反排列中每次交换相邻的两个数，并且它们要满足差不小于k，使得最终1的位置尽量靠前，然后2的位置尽量靠前，依此类推。</p>
+<p>记元排列为P，反排列为Q，最小字典序的Q一定对应最小字典序的P，求出最小字典序后在i前面的数一定都是比i小或者比i大但位置差小于k且在原来Q中就在i前面的数。这样的话就能建一张图表示最终排列里的前后位置关系，然后求这个图的最小字典序的一个拓扑序即可。</p>
+<p>如果每个点都这样建边的话那就是$n^2$的了，每个点只需要向前后最先满足条件的点建边即可，其他的其实不需要。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">readint</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">char</span> c;<span class="keyword">int</span> tmp=<span class="number">0</span>,x=<span class="number">1</span>;c=getchar();</div><div class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))&#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>) x=<span class="number">-1</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))&#123;tmp=tmp*<span class="number">10</span>+c-<span class="string">'0'</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> tmp*x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">500000</span>+<span class="number">5</span>;</div><div class="line"><span class="keyword">int</span> p[maxn],q[maxn],deg[maxn],ans[maxn],n,k;</div><div class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span> &gt; ss;</div><div class="line"><span class="keyword">typedef</span> <span class="built_in">set</span>&lt;<span class="keyword">int</span> &gt;::iterator seto;</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span> &gt; g[maxn];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> from,<span class="keyword">int</span> to)</span></span></div><div class="line">&#123;</div><div class="line">    g[from].push_back(to);</div><div class="line">    deg[to]++;</div><div class="line">&#125;</div><div class="line">priority_queue&lt;<span class="keyword">int</span> ,<span class="built_in">vector</span>&lt;<span class="keyword">int</span> &gt;,greater&lt;<span class="keyword">int</span> &gt; &gt; pq;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    n=readint();k=readint();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) q[p[i]=readint()]=i;</div><div class="line">    seto ite;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</div><div class="line">        <span class="keyword">if</span>(i-k&gt;=<span class="number">1</span>) ss.erase(p[i-k]);</div><div class="line">        ite=(ss.insert(p[i])).first;</div><div class="line">        <span class="keyword">if</span>(++ite!=ss.end()) addedge(i,q[*ite]);</div><div class="line">    &#125;</div><div class="line">    ss.clear();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;i--)&#123;</div><div class="line">        <span class="keyword">if</span>(i+k&lt;=n) ss.erase(p[i+k]);</div><div class="line">        ite=(ss.insert(p[i])).first;</div><div class="line">        <span class="keyword">if</span>(++ite!=ss.end()) addedge(i,q[*ite]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">if</span>(deg[i]==<span class="number">0</span>) pq.push(i);</div><div class="line">    <span class="keyword">int</span> res=<span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(!pq.empty())&#123;</div><div class="line">        <span class="keyword">int</span> tp=pq.top();pq.pop();</div><div class="line">        ans[tp]=++res;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;(<span class="keyword">int</span>)g[tp].size();j++) &#123;</div><div class="line">            deg[g[tp][j]]--;</div><div class="line">            <span class="keyword">if</span>(deg[g[tp][j]]==<span class="number">0</span>) pq.push(g[tp][j]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans[i]);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -415,6 +432,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/atcoder/" rel="tag"># atcoder</a>
+          
+        </div>
+      
 
       
       
@@ -424,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/22/la3831/" rel="next" title="UVALive3831 Double Queue(普通treap)">
-                <i class="fa fa-chevron-left"></i> UVALive3831 Double Queue(普通treap)
+              <a href="/2017/10/12/cf860D/" rel="next" title="cf860D Wizard's Tour">
+                <i class="fa fa-chevron-left"></i> cf860D Wizard's Tour
               </a>
             
           </div>
@@ -433,10 +456,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/23/cf85d/" rel="prev" title="CodeForces 85D Sum of Medians(treap)">
-                CodeForces 85D Sum of Medians(treap) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -460,6 +479,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -662,6 +687,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 95670, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 95670, xid: "2017/10/12/agc01F/"});
 		
 
 		(function() {
