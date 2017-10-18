@@ -21,7 +21,7 @@
   <entry>
     <title><![CDATA[Educational Codeforces Round 29]]></title>
     <url>%2F2017%2F10%2F14%2F1%2F</url>
-    <content type="text"><![CDATA[$$\left{\begin{matrix}a{i}+a{j}=x \b{i}+b{j}=y\end{matrix}\right.$$]]></content>
+    <content type="text"><![CDATA[$$\left{\begin{matrix}a_{i}+a_{j}=x \b_{i}+b_{j}=y\end{matrix}\right.$$]]></content>
       <tags>
         <tag>cf</tag>
         <tag>edu</tag>
