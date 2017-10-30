@@ -1,0 +1,1137 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Monda:300,300italic,400,400italic,700,700italic|source code pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="bzoj," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="这题挺好的… 给定一个序列，支持  单点修改 询问一个区间从大到小排序后是否是给定公差的等差数列  如果一个区间是一个公差是$k$的等差数列，那么这个区间会满足：  最大值和最小值之差为(区间长度-1)$\times$公差 区间内所有相邻数之间的差$gcd$为公差的倍数 当公差不为0时，区间里没有相等的数  1条件：线段树维护最大值最小值即可。 2条件：维护这个区间的所有相邻两数差的$gcd$即可">
+<meta name="keywords" content="bzoj">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bzoj4373 算术天才⑨与等差数列">
+<meta property="og:url" content="http://yoursite.com/2017/10/29/bzoj4373/index.html">
+<meta property="og:site_name" content="nonamenotitle&#39;s blog">
+<meta property="og:description" content="这题挺好的… 给定一个序列，支持  单点修改 询问一个区间从大到小排序后是否是给定公差的等差数列  如果一个区间是一个公差是$k$的等差数列，那么这个区间会满足：  最大值和最小值之差为(区间长度-1)$\times$公差 区间内所有相邻数之间的差$gcd$为公差的倍数 当公差不为0时，区间里没有相等的数  1条件：线段树维护最大值最小值即可。 2条件：维护这个区间的所有相邻两数差的$gcd$即可">
+<meta property="og:updated_time" content="2017-10-30T05:01:28.972Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bzoj4373 算术天才⑨与等差数列">
+<meta name="twitter:description" content="这题挺好的… 给定一个序列，支持  单点修改 询问一个区间从大到小排序后是否是给定公差的等差数列  如果一个区间是一个公差是$k$的等差数列，那么这个区间会满足：  最大值和最小值之差为(区间长度-1)$\times$公差 区间内所有相邻数之间的差$gcd$为公差的倍数 当公差不为0时，区间里没有相等的数  1条件：线段树维护最大值最小值即可。 2条件：维护这个区间的所有相邻两数差的$gcd$即可">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/29/bzoj4373/"/>
+
+
+
+
+
+  <title>bzoj4373 算术天才⑨与等差数列 | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">nonamenotitle's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Welcome.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friends">
+          <a href="/friends/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-group"></i> <br />
+            
+            Friends
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user-circle"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cube"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-comments">
+          <a href="/comments/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments-o"></i> <br />
+            
+            Comments
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-models">
+          <a href="/models/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-star"></i> <br />
+            
+            Models
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/29/bzoj4373/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nonamenotitle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nonamenotitle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">bzoj4373 算术天才⑨与等差数列</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-29T21:37:08+08:00">
+                2017-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/29/bzoj4373/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/10/29/bzoj4373/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这题挺好的…</p>
+<p>给定一个序列，支持</p>
+<ul>
+<li>单点修改</li>
+<li>询问一个区间从大到小排序后是否是给定公差的等差数列</li>
+</ul>
+<p>如果一个区间是一个公差是$k$的等差数列，那么这个区间会满足：</p>
+<ol>
+<li>最大值和最小值之差为(区间长度-1)$\times$公差</li>
+<li>区间内所有相邻数之间的差$gcd$为公差的倍数</li>
+<li>当公差不为0时，区间里没有相等的数</li>
+</ol>
+<p>1条件：线段树维护最大值最小值即可。</p>
+<p>2条件：维护这个区间的所有相邻两数差的$gcd$即可。具体而言，设这个标记为$gd$，在从左右儿子$push~up$到当前结点时，考虑每个节点维护这个区间最左和最右的元素，然后相减求$gcd$再与两区间的$gd$值的$gcd$即可。</p>
+<p>3条件：因为强制在线，所以不能对数据($\leq 10^9$)离散化，于是只能用个$map$搞下。考虑对于每种值开一个$set$，记录这个值所有的下标，记$a_i$为原序列，$pre_i$为$i$这个位置与$a_i$相等的数在前面最大的位置，$nxt_i$为$i$这个位置与$a_i$相等的数在前面最小的位置，然后我们对一个区间询问有没有相同的数，就可以看作是在$pre$和$nxt$数组上这个区间里前者取最大值，后者取最小值，若这两个值在区间中，自然就证明了这个区间里有重复数字辣。</p>
+<p>然而原题的出题人并没有考虑到条件3，也就是说，不写条件3的两棵线段树和那两个容器的版本造的数据，所以内存限制被出题人卡到$128MB$，我可能写的丑在bzoj被卡了内存，不过没写条件3的还是可以顺利地过的。写了条件3的版本本地写了个脚本也测$ac$了。不过应该是我写丑的原因，每棵线段树如果能写优到两倍点空间的话这题还是可以在$128MB$内过的。</p>
+<p>条件1~2<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="function">T <span class="title">readin</span><span class="params">(T &amp;rd)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">char</span> c;T tmp=<span class="number">0</span>,x=<span class="number">1</span>;c=getchar();</div><div class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))&#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>) x=<span class="number">-1</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))&#123;tmp=tmp*<span class="number">10</span>+c-<span class="string">'0'</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> rd=tmp*x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="function"><span class="keyword">void</span> <span class="title">writeout</span><span class="params">(T ot)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(ot==<span class="number">0</span>) &#123;<span class="built_in">putchar</span>(<span class="string">'0'</span>);<span class="keyword">return</span>;&#125;</div><div class="line">    <span class="keyword">if</span>(ot&lt;<span class="number">0</span>) &#123;<span class="built_in">putchar</span>(<span class="string">'-'</span>);ot*=<span class="number">-1</span>;&#125;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">char</span> s[<span class="number">21</span>];<span class="keyword">int</span> idx=<span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(ot&gt;<span class="number">0</span>) s[++idx]=ot%<span class="number">10</span>+<span class="string">'0'</span>,ot/=<span class="number">10</span>;</div><div class="line">    <span class="keyword">while</span>(idx) <span class="built_in">putchar</span>(s[idx--]);</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">300000</span>+<span class="number">5</span>;</div><div class="line">ll a[maxn];</div><div class="line"><span class="keyword">int</span> n,m;</div><div class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> b==<span class="number">0</span>?a:gcd(b,a%b);&#125;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> lson (o&lt;&lt;1)</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> rson (o&lt;&lt;1|1)</span></div><div class="line">ll pre[maxn],nxt[maxn];</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">intervaltree</span>&#123;</span></div><div class="line">    ll maxv[maxn&lt;&lt;<span class="number">2</span>],minv[maxn&lt;&lt;<span class="number">2</span>],gc[maxn&lt;&lt;<span class="number">2</span>],lnum[maxn&lt;&lt;<span class="number">2</span>],rnum[maxn&lt;&lt;<span class="number">2</span>];</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(l&lt;r)&#123;</div><div class="line">            maxv[o]=max(maxv[lson],maxv[rson]);</div><div class="line">            minv[o]=min(minv[lson],minv[rson]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(l==r) <span class="keyword">return</span>;</div><div class="line">        lnum[o]=lnum[lson],rnum[o]=rnum[rson];</div><div class="line">        <span class="keyword">int</span> del=rnum[lson]-lnum[rson];</div><div class="line">        <span class="keyword">if</span>(del&lt;<span class="number">0</span>) del=-del;</div><div class="line">        gc[o]=gcd(gcd(gc[lson],del),gc[rson]);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(l&gt;r) <span class="keyword">return</span>;</div><div class="line">        <span class="keyword">if</span>(l==r) &#123;</div><div class="line">            maxv[o]=minv[o]=a[l],lnum[o]=a[l],rnum[o]=a[l],gc[o]=<span class="number">0</span>;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">            build(lson,l,mid);</div><div class="line">            build(rson,mid+<span class="number">1</span>,r);</div><div class="line">            maintain(o,l,r);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">getchg</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,ll val)</span></span></div><div class="line">    &#123;</div><div class="line">        assert(l==r);</div><div class="line">        maxv[o]=minv[o]=val;</div><div class="line">        lnum[o]=rnum[o]=val;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Uchg</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> pos,ll val)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(pos&lt;l || pos&gt;r) <span class="keyword">return</span>;</div><div class="line">        <span class="keyword">if</span>(l==r &amp;&amp; l==pos) &#123;getchg(o,l,r,val);<span class="keyword">return</span>;&#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">            <span class="keyword">if</span>(pos&lt;=mid) Uchg(lson,l,mid,pos,val);</div><div class="line">            <span class="keyword">else</span> Uchg(rson,mid+<span class="number">1</span>,r,pos,val);</div><div class="line">            maintain(o,l,r);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function">ll <span class="title">Qmos</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> ql,<span class="keyword">int</span> qr,<span class="keyword">int</span> typ)</span> <span class="comment">//1-&gt;max 0-&gt;min</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(ql&gt;r || qr&lt;l) <span class="keyword">return</span> typ==<span class="number">1</span>?LLONG_MIN:LLONG_MAX;</div><div class="line">        <span class="keyword">if</span>(ql&lt;=l &amp;&amp; r&lt;=qr) <span class="keyword">return</span> typ==<span class="number">1</span>?maxv[o]:minv[o];</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">            ll ret=(typ==<span class="number">1</span>?LLONG_MIN:LLONG_MAX);</div><div class="line">            <span class="keyword">if</span>(ql&lt;=mid) &#123;</div><div class="line">                <span class="keyword">if</span>(typ==<span class="number">1</span>) ret=max(ret,Qmos(lson,l,mid,ql,qr,typ));</div><div class="line">                <span class="keyword">else</span> ret=min(ret,Qmos(lson,l,mid,ql,qr,typ));</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(qr&gt;mid) &#123;</div><div class="line">                <span class="keyword">if</span>(typ==<span class="number">1</span>) ret=max(ret,Qmos(rson,mid+<span class="number">1</span>,r,ql,qr,typ));</div><div class="line">                <span class="keyword">else</span> ret=min(ret,Qmos(rson,mid+<span class="number">1</span>,r,ql,qr,typ));</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> ret;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function">ll <span class="title">Qgcd</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> ql,<span class="keyword">int</span> qr)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(ql&gt;r || qr&lt;l) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(ql&lt;=l &amp;&amp; r&lt;=qr) <span class="keyword">return</span> gc[o];</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">            ll ret=<span class="number">0</span>;</div><div class="line">            <span class="keyword">if</span>(ql&lt;=mid) ret=gcd(ret,Qgcd(lson,l,mid,ql,qr));</div><div class="line">            <span class="keyword">if</span>(qr&gt;mid) ret=gcd(ret,Qgcd(rson,mid+<span class="number">1</span>,r,ql,qr));</div><div class="line">            <span class="keyword">return</span> ret;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">out</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> o=<span class="number">1</span>;o&lt;=n*<span class="number">2</span>;o++) &#123;</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"maxv[%d]=%lld minv[%d]=%lld\ngc[%d]=%lld lnum[%d]=%lld rnum[%d]=%lld\n"</span>,</div><div class="line">            o,maxv[o],o,minv[o],o,gc[o],o,lnum[o],o,rnum[o]);</div><div class="line">            <span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125; Tree;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">ok</span><span class="params">()</span></span>&#123;<span class="built_in">printf</span>(<span class="string">"Yes\r\n"</span>);&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">no</span><span class="params">()</span></span>&#123;<span class="built_in">printf</span>(<span class="string">"No\r\n"</span>);&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</div><div class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=n;i++) &#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> op;</div><div class="line">    ll l,r,x,y,k;</div><div class="line">    Tree.build(<span class="number">1</span>,<span class="number">1</span>,n);</div><div class="line">    ll ys=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;op);</div><div class="line">        <span class="keyword">if</span>(op==<span class="number">1</span>)&#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;x,&amp;y);</div><div class="line">            x^=ys,y^=ys;</div><div class="line">            a[x]=y;</div><div class="line">            Tree.Uchg(<span class="number">1</span>,<span class="number">1</span>,n,x,y);</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(op==<span class="number">2</span>)&#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld"</span>,&amp;l,&amp;r,&amp;k);</div><div class="line">            l^=ys,r^=ys,k^=ys;</div><div class="line">            assert(l&lt;=r);</div><div class="line">            ll gd=Tree.Qgcd(<span class="number">1</span>,<span class="number">1</span>,n,l,r),mx=Tree.Qmos(<span class="number">1</span>,<span class="number">1</span>,n,l,r,<span class="number">1</span>),mn=Tree.Qmos(<span class="number">1</span>,<span class="number">1</span>,n,l,r,<span class="number">0</span>);</div><div class="line">            <span class="keyword">if</span>(((k==<span class="number">0</span> &amp;&amp; gd==<span class="number">0</span>) || (k&gt;<span class="number">0</span> &amp;&amp; gd%k==<span class="number">0</span>)) &amp;&amp; mx-mn==(r-l)*k) </div><div class="line">                ok(),ys++;</div><div class="line">            <span class="keyword">else</span> no();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>条件1~3：容器+询问的常数，带起来就是$O(n\times 10logn)$了,常数有点大<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="function">T <span class="title">readin</span><span class="params">(T &amp;rd)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">char</span> c;T tmp=<span class="number">0</span>,x=<span class="number">1</span>;c=getchar();</div><div class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(c))&#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>) x=<span class="number">-1</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c))&#123;tmp=tmp*<span class="number">10</span>+c-<span class="string">'0'</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> rd=tmp*x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="function"><span class="keyword">void</span> <span class="title">writeout</span><span class="params">(T ot)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(ot==<span class="number">0</span>) &#123;<span class="built_in">putchar</span>(<span class="string">'0'</span>);<span class="keyword">return</span>;&#125;</div><div class="line">    <span class="keyword">if</span>(ot&lt;<span class="number">0</span>) &#123;<span class="built_in">putchar</span>(<span class="string">'-'</span>);ot*=<span class="number">-1</span>;&#125;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">char</span> s[<span class="number">21</span>];<span class="keyword">int</span> idx=<span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(ot&gt;<span class="number">0</span>) s[++idx]=ot%<span class="number">10</span>+<span class="string">'0'</span>,ot/=<span class="number">10</span>;</div><div class="line">    <span class="keyword">while</span>(idx) <span class="built_in">putchar</span>(s[idx--]);</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">300000</span>+<span class="number">5</span>;</div><div class="line">ll a[maxn];</div><div class="line"><span class="keyword">int</span> n,m;</div><div class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> b==<span class="number">0</span>?a:gcd(b,a%b);&#125;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> lson (o&lt;&lt;1)</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> rson (o&lt;&lt;1|1)</span></div><div class="line">ll pre[maxn],nxt[maxn];</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">intervaltree</span>&#123;</span></div><div class="line">    ll maxv[<span class="number">3</span>][maxn&lt;&lt;<span class="number">2</span>],minv[<span class="number">3</span>][maxn&lt;&lt;<span class="number">2</span>],gc[maxn&lt;&lt;<span class="number">2</span>],lnum[maxn&lt;&lt;<span class="number">2</span>],rnum[maxn&lt;&lt;<span class="number">2</span>];</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">(<span class="keyword">int</span> id,<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(l&lt;r)&#123;</div><div class="line">            maxv[id][o]=max(maxv[id][lson],maxv[id][rson]);</div><div class="line">            minv[id][o]=min(minv[id][lson],minv[id][rson]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(l==r) <span class="keyword">return</span>;</div><div class="line">        <span class="keyword">if</span>(id==<span class="number">0</span>) &#123;</div><div class="line">            lnum[o]=lnum[lson],rnum[o]=rnum[rson];</div><div class="line">            <span class="keyword">int</span> del=rnum[lson]-lnum[rson];</div><div class="line">            <span class="keyword">if</span>(del&lt;<span class="number">0</span>) del=-del;</div><div class="line">            gc[o]=gcd(gcd(gc[lson],del),gc[rson]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> id,<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(l&gt;r) <span class="keyword">return</span>;</div><div class="line">        <span class="keyword">if</span>(l==r) &#123;</div><div class="line">            <span class="keyword">if</span>(id==<span class="number">0</span>) maxv[id][o]=minv[id][o]=a[l],lnum[o]=a[l],rnum[o]=a[l],gc[o]=<span class="number">0</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(id==<span class="number">1</span>) maxv[id][o]=minv[id][o]=pre[l];</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(id==<span class="number">2</span>) maxv[id][o]=minv[id][o]=nxt[l];</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">            build(id,lson,l,mid);</div><div class="line">            build(id,rson,mid+<span class="number">1</span>,r);</div><div class="line">            maintain(id,o,l,r);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">getchg</span><span class="params">(<span class="keyword">int</span> id,<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,ll val)</span></span></div><div class="line">    &#123;</div><div class="line">        assert(l==r);</div><div class="line">        maxv[id][o]=minv[id][o]=val;</div><div class="line">        <span class="keyword">if</span>(id==<span class="number">0</span>) lnum[o]=rnum[o]=val;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Uchg</span><span class="params">(<span class="keyword">int</span> id,<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> pos,ll val)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(pos&lt;l || pos&gt;r) <span class="keyword">return</span>;</div><div class="line">        <span class="keyword">if</span>(l==r &amp;&amp; l==pos) &#123;getchg(id,o,l,r,val);<span class="keyword">return</span>;&#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">            <span class="keyword">if</span>(pos&lt;=mid) Uchg(id,lson,l,mid,pos,val);</div><div class="line">            <span class="keyword">else</span> Uchg(id,rson,mid+<span class="number">1</span>,r,pos,val);</div><div class="line">            maintain(id,o,l,r);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function">ll <span class="title">Qmos</span><span class="params">(<span class="keyword">int</span> id,<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> ql,<span class="keyword">int</span> qr,<span class="keyword">int</span> typ)</span> <span class="comment">//1-&gt;max 0-&gt;min</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(ql&gt;r || qr&lt;l) <span class="keyword">return</span> typ==<span class="number">1</span>?LLONG_MIN:LLONG_MAX;</div><div class="line">        <span class="keyword">if</span>(ql&lt;=l &amp;&amp; r&lt;=qr) <span class="keyword">return</span> typ==<span class="number">1</span>?maxv[id][o]:minv[id][o];</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">            ll ret=(typ==<span class="number">1</span>?LLONG_MIN:LLONG_MAX);</div><div class="line">            <span class="keyword">if</span>(ql&lt;=mid) &#123;</div><div class="line">                <span class="keyword">if</span>(typ==<span class="number">1</span>) ret=max(ret,Qmos(id,lson,l,mid,ql,qr,typ));</div><div class="line">                <span class="keyword">else</span> ret=min(ret,Qmos(id,lson,l,mid,ql,qr,typ));</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(qr&gt;mid) &#123;</div><div class="line">                <span class="keyword">if</span>(typ==<span class="number">1</span>) ret=max(ret,Qmos(id,rson,mid+<span class="number">1</span>,r,ql,qr,typ));</div><div class="line">                <span class="keyword">else</span> ret=min(ret,Qmos(id,rson,mid+<span class="number">1</span>,r,ql,qr,typ));</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> ret;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function">ll <span class="title">Qgcd</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> ql,<span class="keyword">int</span> qr)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(ql&gt;r || qr&lt;l) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(ql&lt;=l &amp;&amp; r&lt;=qr) <span class="keyword">return</span> gc[o];</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">            ll ret=<span class="number">0</span>;</div><div class="line">            <span class="keyword">if</span>(ql&lt;=mid) ret=gcd(ret,Qgcd(lson,l,mid,ql,qr));</div><div class="line">            <span class="keyword">if</span>(qr&gt;mid) ret=gcd(ret,Qgcd(rson,mid+<span class="number">1</span>,r,ql,qr));</div><div class="line">            <span class="keyword">return</span> ret;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">out</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> o=<span class="number">1</span>;o&lt;=n*<span class="number">2</span>;o++) &#123;</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"maxv[%d]=%lld minv[%d]=%lld\ngc[%d]=%lld lnum[%d]=%lld rnum[%d]=%lld\n"</span>,</div><div class="line">            o,maxv[<span class="number">0</span>][o],o,minv[<span class="number">0</span>][o],o,gc[o],o,lnum[o],o,rnum[o]);</div><div class="line">            <span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125; Tree;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">ok</span><span class="params">()</span></span>&#123;<span class="built_in">printf</span>(<span class="string">"Yes\r\n"</span>);&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">no</span><span class="params">()</span></span>&#123;<span class="built_in">printf</span>(<span class="string">"No\r\n"</span>);&#125;</div><div class="line"><span class="built_in">map</span>&lt;ll ,<span class="built_in">set</span>&lt;ll &gt; &gt; ss;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</div><div class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=n;i++) &#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</div><div class="line">        ss[a[i]].insert(i);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">set</span>&lt;ll&gt;::iterator ite;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</div><div class="line">        ite=ss[a[i]].upper_bound(i);</div><div class="line">        nxt[i]=(ite==ss[a[i]].end())?LLONG_MAX:*ite;</div><div class="line">        ite=ss[a[i]].lower_bound(i);</div><div class="line">        pre[i]=(ite==ss[a[i]].begin())?LLONG_MIN:*(--ite);</div><div class="line">    &#125;</div><div class="line">    Tree.build(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,n),Tree.build(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>,n);</div><div class="line">    <span class="keyword">int</span> op;</div><div class="line">    ll l,r,x,y,k;</div><div class="line">    Tree.build(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,n);</div><div class="line">    ll ys=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;op);</div><div class="line">        <span class="keyword">if</span>(op==<span class="number">1</span>)&#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;x,&amp;y);</div><div class="line">            x^=ys,y^=ys;</div><div class="line">            ll pr=pre[x],nx=nxt[x];</div><div class="line">            <span class="keyword">if</span>(pr!=LLONG_MIN) &#123;Tree.Uchg(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>,n,pr,nx);nxt[pr]=nx;&#125;</div><div class="line">            <span class="keyword">if</span>(nx!=LLONG_MAX) &#123;Tree.Uchg(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,n,nx,pr);pre[nx]=pr;&#125;</div><div class="line">            ss[a[x]].erase(x);</div><div class="line">            ss[y].insert(x);</div><div class="line">            ite=ss[y].upper_bound(x);</div><div class="line">            nxt[x]=(ite==ss[y].end())?LLONG_MAX:*ite;</div><div class="line">            ite=ss[y].lower_bound(x);</div><div class="line">            pre[x]=(ite==ss[y].begin())?LLONG_MIN:*(--ite);</div><div class="line">            a[x]=y;</div><div class="line">            <span class="keyword">if</span>(pre[x]!=LLONG_MIN) Tree.Uchg(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>,n,pre[x],x);</div><div class="line">            <span class="keyword">if</span>(nxt[x]!=LLONG_MAX) Tree.Uchg(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,n,nxt[x],x);</div><div class="line">            Tree.Uchg(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,n,x,pre[x]);</div><div class="line">            Tree.Uchg(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>,n,x,nxt[x]);</div><div class="line">            Tree.Uchg(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,n,x,y);</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(op==<span class="number">2</span>)&#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld"</span>,&amp;l,&amp;r,&amp;k);</div><div class="line">            l^=ys,r^=ys,k^=ys;</div><div class="line">            assert(l&lt;=r);</div><div class="line">            ll gd=Tree.Qgcd(<span class="number">1</span>,<span class="number">1</span>,n,l,r),mx=Tree.Qmos(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,n,l,r,<span class="number">1</span>),mn=Tree.Qmos(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,n,l,r,<span class="number">0</span>);</div><div class="line">            ll premx=Tree.Qmos(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,n,l,r,<span class="number">1</span>),nxtmn=Tree.Qmos(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>,n,l,r,<span class="number">0</span>);</div><div class="line">            <span class="keyword">if</span>(((k==<span class="number">0</span> &amp;&amp; gd==<span class="number">0</span>) || (k&gt;<span class="number">0</span> &amp;&amp; gd%k==<span class="number">0</span>)) &amp;&amp; mx-mn==(r-l)*k &amp;&amp; (k==<span class="number">0</span> || (k&gt;<span class="number">0</span> &amp;&amp; premx&lt;l &amp;&amp; nxtmn&gt;r))) </div><div class="line">                ok(),ys++;</div><div class="line">            <span class="keyword">else</span> no();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/bzoj/" rel="tag"># bzoj</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/17/firefroz/" rel="next" title="模拟退火">
+                <i class="fa fa-chevron-left"></i> 模拟退火
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/29/bzoj1858/" rel="prev" title="bzoj1858 序列操作">
+                bzoj1858 序列操作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="nonamenotitle" />
+          <p class="site-author-name" itemprop="name">nonamenotitle</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-coffee"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">nonamenotitle</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 95670, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 95670, xid: "2017/10/29/bzoj4373/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/95670/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('100');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
