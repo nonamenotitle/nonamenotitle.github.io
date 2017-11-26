@@ -93,7 +93,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="bzoj,intervaltree,binarysearch," />
 
 
 
@@ -109,18 +109,17 @@
 
 
 
-<meta name="description" content="留言板大家可以留言，有写错的地方尽管表我">
-<meta property="og:type" content="website">
-<meta property="og:title" content="comments">
-<meta property="og:url" content="http://yoursite.com/comments/index.html">
+<meta name="description" content="题意一个平面开始时为空，$x$坐标的范围是$[1,n]$，有$m$次操作每次改变一个横坐标上的线段的高度，问从$(0,0)$点能看到多少线段（如果一个线段被前面的线段挡住了，那么看不到）。 分析维护一个线段树，每个区间里记录这个区间的最大斜率和只考虑这个区间时，能看到的线段条数。 由子节点更新父结点时，子节点$lson$的答案肯定是不变的，但是$rson$的答案会改变，因为$lson$里会有线段遮">
+<meta name="keywords" content="bzoj,intervaltree,binarysearch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bzoj2957 楼房重建">
+<meta property="og:url" content="http://yoursite.com/2017/11/24/bzoj2957/index.html">
 <meta property="og:site_name" content="nonamenotitle&#39;s blog">
-<meta property="og:description" content="留言板大家可以留言，有写错的地方尽管表我">
-<meta property="og:image" content="http://yoursite.com/images/Sign_Okay.png">
-<meta property="og:updated_time" content="2017-09-18T11:03:01.657Z">
+<meta property="og:description" content="题意一个平面开始时为空，$x$坐标的范围是$[1,n]$，有$m$次操作每次改变一个横坐标上的线段的高度，问从$(0,0)$点能看到多少线段（如果一个线段被前面的线段挡住了，那么看不到）。 分析维护一个线段树，每个区间里记录这个区间的最大斜率和只考虑这个区间时，能看到的线段条数。 由子节点更新父结点时，子节点$lson$的答案肯定是不变的，但是$rson$的答案会改变，因为$lson$里会有线段遮">
+<meta property="og:updated_time" content="2017-11-26T04:06:59.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="comments">
-<meta name="twitter:description" content="留言板大家可以留言，有写错的地方尽管表我">
-<meta name="twitter:image" content="http://yoursite.com/images/Sign_Okay.png">
+<meta name="twitter:title" content="bzoj2957 楼房重建">
+<meta name="twitter:description" content="题意一个平面开始时为空，$x$坐标的范围是$[1,n]$，有$m$次操作每次改变一个横坐标上的线段的高度，问从$(0,0)$点能看到多少线段（如果一个线段被前面的线段挡住了，那么看不到）。 分析维护一个线段树，每个区间里记录这个区间的最大斜率和只考虑这个区间时，能看到的线段条数。 由子节点更新父结点时，子节点$lson$的答案肯定是不变的，但是$rson$的答案会改变，因为$lson$里会有线段遮">
 
 
 
@@ -148,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/comments/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/24/bzoj2957/"/>
 
 
 
 
 
-  <title>comments | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>bzoj2957 楼房重建 | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -328,20 +327,169 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline">comments</h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/24/bzoj2957/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nonamenotitle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nonamenotitle's blog">
+    </span>
 
     
-    
-      <h2 id="留言板"><a href="#留言板" class="headerlink" title="留言板"></a>留言板</h2><p>大家可以留言，<del>有写错的地方尽管表我</del></p>
-<p><img src="/images/Sign_Okay.png" alt="image"></p>
+      <header class="post-header">
 
+        
+        
+          <h1 class="post-title" itemprop="name headline">bzoj2957 楼房重建</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-24T23:57:08+08:00">
+                2017-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/24/bzoj2957/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/11/24/bzoj2957/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>一个平面开始时为空，$x$坐标的范围是$[1,n]$，有$m$次操作每次改变一个横坐标上的线段的高度，问从$(0,0)$点能看到多少线段（如果一个线段被前面的线段挡住了，那么看不到）。</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>维护一个线段树，每个区间里记录这个区间的最大斜率和只考虑这个区间时，能看到的线段条数。</p>
+<p>由子节点更新父结点时，子节点$lson$的答案肯定是不变的，但是$rson$的答案会改变，因为$lson$里会有线段遮住右儿子的线段，所以只需要重新计算右儿子的答案再加回来即可。计算一个区间的比$val$大的数有几个时，分为两种情况，一种是$maxv[lson] \le val$，此时左儿子没有贡献，递归去计算右儿子的值即可；另一种是$maxv[lson]&gt;val$，那么此时右儿子的答案不会改变，因为右儿子无论如何一定建立在左儿子最大的基础上，所以重新计算左儿子的答案，再加上右儿子本身的答案即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> </div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=(<span class="keyword">int</span>)<span class="number">1e5</span>+<span class="number">5</span>;</div><div class="line"><span class="keyword">double</span> maxv[maxn&lt;&lt;<span class="number">2</span>];</div><div class="line"><span class="keyword">int</span> ans[maxn&lt;&lt;<span class="number">2</span>];</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">readInt</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">char</span> c=<span class="number">0</span>;<span class="keyword">int</span> tmp=<span class="number">0</span>,x=<span class="number">1</span>;c=getchar();</div><div class="line">    <span class="keyword">while</span>(c&gt;<span class="string">'9'</span> || c&lt;<span class="string">'0'</span>) &#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>) x=<span class="number">-1</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(c&gt;=<span class="string">'0'</span> &amp;&amp; c&lt;=<span class="string">'9'</span>) &#123;tmp=tmp*<span class="number">10</span>+c-<span class="string">'0'</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> tmp*x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> n,m;</div><div class="line"> </div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> lson (o&lt;&lt;1)</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> rson (o&lt;&lt;1|1)</span></div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Count</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">double</span> UP)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(l&gt;r) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span>(l==r) <span class="keyword">return</span> maxv[o]&gt;UP;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span>(UP&gt;=maxv[lson]) <span class="keyword">return</span> Count(rson,mid+<span class="number">1</span>,r,UP);</div><div class="line">        <span class="keyword">else</span> <span class="keyword">return</span> ans[o]-ans[lson]+Count(lson,l,mid,UP);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Upos</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> pos,<span class="keyword">double</span> val)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(pos&gt;r || pos&lt;l) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">if</span>(l==r &amp;&amp; pos==l) &#123;maxv[o]=val,ans[o]=<span class="number">1</span>;<span class="keyword">return</span>;&#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span>(pos&lt;=mid) Upos(lson,l,mid,pos,val);</div><div class="line">        <span class="keyword">else</span> Upos(rson,mid+<span class="number">1</span>,r,pos,val);</div><div class="line">        maxv[o]=max(maxv[lson],maxv[rson]);</div><div class="line">        ans[o]=ans[lson]+Count(rson,mid+<span class="number">1</span>,r,maxv[lson]);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> x,y;</div><div class="line">    n=readInt(),m=readInt();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</div><div class="line">        x=readInt(),y=readInt();</div><div class="line">        Upos(<span class="number">1</span>,<span class="number">1</span>,n,x,(<span class="keyword">double</span>)y/x);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans[<span class="number">1</span>]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/bzoj/" rel="tag"># bzoj</a>
+          
+            <a href="/tags/intervaltree/" rel="tag"># intervaltree</a>
+          
+            <a href="/tags/binarysearch/" rel="tag"># binarysearch</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/21/100861J/" rel="next" title="100861J Jig-saw Puzzle">
+                <i class="fa fa-chevron-left"></i> 100861J Jig-saw Puzzle
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/25/hdu5306/" rel="prev" title="hdu5306 Gorgeous Sequence">
+                hdu5306 Gorgeous Sequence <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -448,7 +596,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#留言板"><span class="nav-number">1.</span> <span class="nav-text">留言板</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li></ol></div>
             
 
           </div>
@@ -556,10 +704,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -584,7 +732,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 95670, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 95670, xid: "comments/index.html"});
+		_hcwp.push({widget:"Stream", widget_id: 95670, xid: "2017/11/24/bzoj2957/"});
 		
 
 		(function() {
