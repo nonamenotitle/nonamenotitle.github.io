@@ -93,7 +93,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="bzoj,分治," />
 
 
 
@@ -109,16 +109,17 @@
 
 
 
-<meta name="description" content="817F 题意给你一些操作  将$[l,r]$内所有不在序列中的数全部加进序列中 将$[l,r]$内所有在序列中的数全部移除 将$[l,r]$内所有不在序列中的数全部加进序列中，并将$[l,r]$内所有在序列中的数全部移除  样例sample1123431 3 43 1 62 1 3 123131 sample21234541 1 33 5 62 4 43 1 6 12344441 题解当时很多人">
+<meta name="description" content="假设我们按重心把树分成了若干子树，那么所要求得顶点对必居下面三者其一  属于同一子树的顶点对(v,w)。 递归解决。   属于不同子树的顶点对(v,w)。 方法很多，比如直接对所有点按照距离重心距离排序，然后枚举所有点，二分即可，别忘了减去①中的点对，或者用平衡树实现。   重心s和其他顶点v组成的顶点对(s,v)。 额外添加一个距离s为零的结点，转化为情况2。    复杂度分析： 对于树分治，由">
+<meta name="keywords" content="bzoj,分治">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cf817F MEX Queries(离散化+线段树)">
-<meta property="og:url" content="http://yoursite.com/2017/09/26/cf817F/index.html">
+<meta property="og:title" content="bzoj1468 Tree">
+<meta property="og:url" content="http://yoursite.com/2017/12/01/bzoj1468/index.html">
 <meta property="og:site_name" content="nonamenotitle&#39;s blog">
-<meta property="og:description" content="817F 题意给你一些操作  将$[l,r]$内所有不在序列中的数全部加进序列中 将$[l,r]$内所有在序列中的数全部移除 将$[l,r]$内所有不在序列中的数全部加进序列中，并将$[l,r]$内所有在序列中的数全部移除  样例sample1123431 3 43 1 62 1 3 123131 sample21234541 1 33 5 62 4 43 1 6 12344441 题解当时很多人">
-<meta property="og:updated_time" content="2017-09-26T11:56:02.901Z">
+<meta property="og:description" content="假设我们按重心把树分成了若干子树，那么所要求得顶点对必居下面三者其一  属于同一子树的顶点对(v,w)。 递归解决。   属于不同子树的顶点对(v,w)。 方法很多，比如直接对所有点按照距离重心距离排序，然后枚举所有点，二分即可，别忘了减去①中的点对，或者用平衡树实现。   重心s和其他顶点v组成的顶点对(s,v)。 额外添加一个距离s为零的结点，转化为情况2。    复杂度分析： 对于树分治，由">
+<meta property="og:updated_time" content="2017-12-03T06:43:06.262Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cf817F MEX Queries(离散化+线段树)">
-<meta name="twitter:description" content="817F 题意给你一些操作  将$[l,r]$内所有不在序列中的数全部加进序列中 将$[l,r]$内所有在序列中的数全部移除 将$[l,r]$内所有不在序列中的数全部加进序列中，并将$[l,r]$内所有在序列中的数全部移除  样例sample1123431 3 43 1 62 1 3 123131 sample21234541 1 33 5 62 4 43 1 6 12344441 题解当时很多人">
+<meta name="twitter:title" content="bzoj1468 Tree">
+<meta name="twitter:description" content="假设我们按重心把树分成了若干子树，那么所要求得顶点对必居下面三者其一  属于同一子树的顶点对(v,w)。 递归解决。   属于不同子树的顶点对(v,w)。 方法很多，比如直接对所有点按照距离重心距离排序，然后枚举所有点，二分即可，别忘了减去①中的点对，或者用平衡树实现。   重心s和其他顶点v组成的顶点对(s,v)。 额外添加一个距离s为零的结点，转化为情况2。    复杂度分析： 对于树分治，由">
 
 
 
@@ -146,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/26/cf817F/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/01/bzoj1468/"/>
 
 
 
 
 
-  <title>cf817F MEX Queries(离散化+线段树) | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>bzoj1468 Tree | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -334,8 +335,8 @@
   
   
 
-  <article class="post post-type-cf " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/cf817F/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/01/bzoj1468/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nonamenotitle">
@@ -352,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">cf817F MEX Queries(离散化+线段树)</h1>
+          <h1 class="post-title" itemprop="name headline">bzoj1468 Tree</h1>
         
 
         <div class="post-meta">
@@ -364,8 +365,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T11:37:08+08:00">
-                2017-09-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-01T00:37:08+08:00">
+                2017-12-01
               </time>
             
 
@@ -384,8 +385,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/26/cf817F/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/09/26/cf817F/" itemprop="commentsCount"></span>
+                <a href="/2017/12/01/bzoj1468/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/12/01/bzoj1468/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -411,22 +412,26 @@
       
 
       
-        <p><a href="http://codeforces.com/problemset/problem/817/F" target="_blank" rel="external">817F</a></p>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给你一些操作</p>
-<ul>
-<li>将$[l,r]$内所有不在序列中的数全部加进序列中</li>
-<li>将$[l,r]$内所有在序列中的数全部移除</li>
-<li>将$[l,r]$内所有不在序列中的数全部加进序列中，并将$[l,r]$内所有在序列中的数全部移除</li>
+        <p>假设我们按重心把树分成了若干子树，那么所要求得顶点对必居下面三者其一</p>
+<ol>
+<li>属于同一子树的顶点对(v,w)。<ul>
+<li>递归解决。</li>
 </ul>
-<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="sample1"><a href="#sample1" class="headerlink" title="sample1"></a>sample1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">3</div><div class="line">1 3 4</div><div class="line">3 1 6</div><div class="line">2 1 3</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1</div><div class="line">3</div><div class="line">1</div></pre></td></tr></table></figure>
-<h4 id="sample2"><a href="#sample2" class="headerlink" title="sample2"></a>sample2</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">4</div><div class="line">1 1 3</div><div class="line">3 5 6</div><div class="line">2 4 4</div><div class="line">3 1 6</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">4</div><div class="line">4</div><div class="line">4</div><div class="line">1</div></pre></td></tr></table></figure>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>当时很多人直接写动态开点的线段树然后gg了…</p>
-<p>然而其实不需要动态开点，因为操作的总是一个区间所以最终的答案一定是$1$，所有区间的$l$，或者所有区间的$r+1$，考虑直接离散化，对询问到的点返回离散化前的值即可。</p>
-<p>线段树的话，维护两个标记:区间异或标记，区间染色标记。优先级：染色大于异或。染色时把异或标记清零，若在下传标记的时候发现既有染色又有异或则说明是先染色后异或，因而先传染色标记，后传异或标记。</p>
-<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p>$\mathcal O(nlogn)$</p>
-<h3 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100000</span>+<span class="number">5</span>;</div><div class="line"><span class="keyword">int</span> sumv[maxn*<span class="number">100</span>],rev[maxn*<span class="number">100</span>],setv[maxn*<span class="number">100</span>];</div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">query</span>&#123;</span></div><div class="line">    <span class="keyword">int</span> op;</div><div class="line">    ll l,r;</div><div class="line">&#125; q[maxn];</div><div class="line"><span class="built_in">vector</span>&lt;ll&gt; vll;</div><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>,ll &gt; rfl;</div><div class="line">ll mx=<span class="number">0</span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> lson (o&lt;&lt;1)</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> rson ((o&lt;&lt;1)+1)</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">maintain</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></div><div class="line">&#123;</div><div class="line">    sumv[o]=sumv[lson]+sumv[rson];</div><div class="line">    <span class="keyword">if</span>(setv[o]!=<span class="number">-1</span>) sumv[o]=(r-l+<span class="number">1</span>)*setv[o];</div><div class="line">    <span class="keyword">if</span>(rev[o]) sumv[o]=(r-l+<span class="number">1</span>)-sumv[o];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getrev</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></div><div class="line">&#123;</div><div class="line">    rev[o]^=<span class="number">1</span>;</div><div class="line">    maintain(o,l,r);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getset</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> st)</span></span></div><div class="line">&#123;</div><div class="line">    setv[o]=st;</div><div class="line">    rev[o]=<span class="number">0</span>;</div><div class="line">    maintain(o,l,r);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(setv[o]!=<span class="number">-1</span>)&#123;</div><div class="line">        <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">        getset(lson,l,mid,setv[o]);</div><div class="line">        getset(rson,mid+<span class="number">1</span>,r,setv[o]);</div><div class="line">        setv[o]=<span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(rev[o])&#123;</div><div class="line">        <span class="keyword">int</span> mid=((l+r)&gt;&gt;<span class="number">1</span>);</div><div class="line">        getrev(lson,l,mid);</div><div class="line">        getrev(rson,mid+<span class="number">1</span>,r);</div><div class="line">        rev[o]=<span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> ql,<span class="keyword">int</span> qr)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(ql&gt;r || qr&lt;l) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">if</span>(ql&lt;=l &amp;&amp; r&lt;=qr) &#123;getrev(o,l,r);<span class="keyword">return</span>;&#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">            pushdown(o,l,r);</div><div class="line">            <span class="keyword">if</span>(ql&lt;=mid) update(lson,l,mid,ql,qr);</div><div class="line">            <span class="keyword">if</span>(qr&gt;mid) update(rson,mid+<span class="number">1</span>,r,ql,qr);</div><div class="line">            maintain(o,l,r);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Set</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> ql,<span class="keyword">int</span> qr,<span class="keyword">int</span> st)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(ql&gt;r || qr&lt;l) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">if</span>(ql&lt;=l &amp;&amp; r&lt;=qr) &#123;getset(o,l,r,st);<span class="keyword">return</span>;&#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">            pushdown(o,l,r);</div><div class="line">            <span class="keyword">if</span>(ql&lt;=mid) Set(lson,l,mid,ql,qr,st);</div><div class="line">            <span class="keyword">if</span>(qr&gt;mid) Set(rson,mid+<span class="number">1</span>,r,ql,qr,st);</div><div class="line">            maintain(o,l,r);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Full</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> sumv[o]==(r-l+<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">empt</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> sumv[o]==<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">Qmex</span><span class="params">(<span class="keyword">int</span> o,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(l==r) <span class="keyword">return</span> rfl[l];</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">        pushdown(o,l,r);</div><div class="line">        <span class="keyword">if</span>(Full(lson,l,mid) &amp;&amp; Full(rson,mid+<span class="number">1</span>,r)) <span class="keyword">return</span> rfl[r+<span class="number">1</span>];</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">if</span>(Full(lson,l,mid)) <span class="keyword">return</span> Qmex(rson,mid+<span class="number">1</span>,r);</div><div class="line">            <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">if</span>(l==<span class="number">1</span> &amp;&amp; empt(lson,l,mid)) <span class="keyword">return</span> <span class="number">1l</span>l;</div><div class="line">                <span class="keyword">else</span> <span class="keyword">return</span> Qmex(lson,l,mid);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">printtree</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>*mx;i++)&#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"sumv[%d]=%d\n"</span>,i,sumv[i]);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"setv[%d]=%d\n"</span>,i,setv[i]);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"rev[%d]=%d\n"</span>,i,rev[i]);</div><div class="line">        <span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">    &#125;<span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">    vll.push_back(<span class="number">1l</span>l);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%lld%lld"</span>,&amp;q[i].op,&amp;q[i].l,&amp;q[i].r);</div><div class="line">        vll.push_back(q[i].l),vll.push_back(q[i].r);vll.push_back(q[i].r+<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">    sort(vll.begin(),vll.end());</div><div class="line">    <span class="keyword">int</span> sz=unique(vll.begin(),vll.end())-vll.begin();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;sz;i++) rfl[i+<span class="number">1</span>]=vll[i];</div><div class="line">    <span class="built_in">memset</span>(setv,<span class="number">-1</span>,<span class="keyword">sizeof</span>(setv));</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</div><div class="line">        q[i].l=lower_bound(vll.begin(),vll.begin()+sz,q[i].l)-vll.begin()+<span class="number">1</span>;</div><div class="line">        q[i].r=lower_bound(vll.begin(),vll.begin()+sz,q[i].r)-vll.begin()+<span class="number">1</span>;</div><div class="line">        mx=max(mx,q[i].l);mx=max(mx,q[i].r);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</div><div class="line">        <span class="keyword">if</span>(q[i].op==<span class="number">1</span>)&#123;</div><div class="line">            Set(<span class="number">1</span>,<span class="number">1</span>,mx,q[i].l,q[i].r,<span class="number">1</span>);</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(q[i].op==<span class="number">2</span>)&#123;</div><div class="line">            Set(<span class="number">1</span>,<span class="number">1</span>,mx,q[i].l,q[i].r,<span class="number">0</span>);</div><div class="line">        &#125;<span class="keyword">else</span> update(<span class="number">1</span>,<span class="number">1</span>,mx,q[i].l,q[i].r);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,Qmex(<span class="number">1</span>,<span class="number">1</span>,mx));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li>属于不同子树的顶点对(v,w)。<ul>
+<li>方法很多，比如直接对所有点按照距离重心距离排序，然后枚举所有点，二分即可，别忘了减去①中的点对，或者用平衡树实现。</li>
+</ul>
+</li>
+<li>重心s和其他顶点v组成的顶点对(s,v)。<ul>
+<li>额外添加一个距离s为零的结点，转化为情况2。</li>
+</ul>
+</li>
+</ol>
+<p>复杂度分析：</p>
+<p>对于树分治，由于一棵树的重心保证最大的子树大小不会超过整棵树的一半，所以我们每对一个联通块找重心并删重心可以将这个联通块划分为至少2个，一次最少删除两条边，因而分为单独的顶点至多需要$\frac{n}{2}$次，总共遍历的点数为</p>
+<p>$ \frac{n}{2} + (\frac{n}{2} + \frac{n}{2^2}) + (\frac{n}{2} + \frac{n}{2^2} + \frac{n}{2^3}) + (\frac{n}{2} + \frac{n}{2^2} + \frac{n}{2^3} + \frac{n}{2^4})+… \\= \frac{n}{2} \times logn +\frac{n}{2^2} \times (logn-1) + \frac{n}{2^3} \times (logn-2) + \frac{n}{2^4} \times (logn-3)+… \\=n\times \frac{logn\times (2^{logn}-1) + (logn-1)\times {2^{logn-2}} +(logn-3) \times 2^{logn-3}+…}{2^{logn}} \\=n\times \frac{logn \times 2^{logn-1} + logn \times 2^{logn-2} -2^{logn-2} + logn \times 2^{logn-3} - 2^{logn-3}+…}{2^{logn}}\\=n \times \frac{logn \times (2^{logn}-1) - (2^{logn-1}-1)}{2^{logn}} \\ \approx n\times(logn-\frac{1}{2}) \\ \approx nlogn$</p>
+<p>再加上统计点对的时候二分所用的$logn$，总的复杂度为$O(nlog^2n)$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">40000</span>+<span class="number">5</span>;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">readInt</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">char</span> c;<span class="keyword">int</span> tmp=<span class="number">0</span>,x=<span class="number">1</span>;c=getchar();</div><div class="line">    <span class="keyword">while</span>(c&gt;<span class="string">'9'</span> || c&lt;<span class="string">'0'</span>) &#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>) x=<span class="number">-1</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(c&gt;=<span class="string">'0'</span> &amp;&amp; c&lt;=<span class="string">'9'</span>) &#123;tmp=tmp*<span class="number">10</span>+c-<span class="string">'0'</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> tmp*x;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span> ,<span class="keyword">int</span> &gt; pii;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> fir first</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> sec second</span></div><div class="line"> </div><div class="line"><span class="keyword">int</span> n,head[maxn],nxt[maxn&lt;&lt;<span class="number">1</span>],eg[maxn&lt;&lt;<span class="number">1</span>],tot=<span class="number">0</span>,W[maxn&lt;&lt;<span class="number">1</span>],K;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span></span></div><div class="line">&#123;</div><div class="line">    eg[++tot]=v;nxt[tot]=head[u];W[tot]=w;head[u]=tot;</div><div class="line">    eg[++tot]=u;nxt[tot]=head[v];W[tot]=w;head[v]=tot;</div><div class="line">&#125;</div><div class="line"><span class="keyword">bool</span> Isc[maxn];</div><div class="line"><span class="keyword">int</span> ans,siz[maxn],par[maxn],parsiz=<span class="number">0</span>,all[maxn],allsiz=<span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Cal_Size</span><span class="params">(<span class="keyword">int</span> v,<span class="keyword">int</span> fa)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> SIZ=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[v];i;i=nxt[i]) &#123;</div><div class="line">        <span class="keyword">int</span> u=eg[i];</div><div class="line">        <span class="keyword">if</span>(u!=fa &amp;&amp; !Isc[u]) SIZ+=Cal_Size(u,v);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> siz[v]=SIZ;</div><div class="line">&#125;</div><div class="line"><span class="function">pii <span class="title">Find_Centroid</span><span class="params">(<span class="keyword">int</span> v,<span class="keyword">int</span> fa,<span class="keyword">int</span> ALL)</span></span></div><div class="line">&#123;</div><div class="line">     <span class="keyword">int</span> maxsiz=<span class="number">0</span>,sum=<span class="number">1</span>;</div><div class="line">     pii ret=MP(INT_MAX,<span class="number">-1</span>);</div><div class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=head[v];i;i=nxt[i]) &#123;</div><div class="line">         <span class="keyword">int</span> u=eg[i];</div><div class="line">         <span class="keyword">if</span>(u!=fa &amp;&amp; !Isc[u]) &#123;</div><div class="line">             ret=min(ret,Find_Centroid(u,v,ALL));</div><div class="line">             sum+=siz[u];</div><div class="line">             maxsiz=max(maxsiz,siz[u]);</div><div class="line">         &#125;</div><div class="line">     &#125;</div><div class="line">     maxsiz=max(maxsiz,ALL-sum);</div><div class="line">     ret=min(ret,MP(maxsiz,v));</div><div class="line">     <span class="keyword">return</span> ret;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Cal_Dist</span><span class="params">(<span class="keyword">int</span> v,<span class="keyword">int</span> fa,<span class="keyword">int</span> precost)</span></span></div><div class="line">&#123;</div><div class="line">    par[parsiz++]=precost;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[v];i;i=nxt[i]) &#123;</div><div class="line">        <span class="keyword">int</span> u=eg[i];</div><div class="line">        <span class="keyword">if</span>(u!=fa &amp;&amp; !Isc[u]) Cal_Dist(u,v,precost+W[i]);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Cal_Ans</span><span class="params">(<span class="keyword">int</span> dis[],<span class="keyword">int</span> Siz)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> res=<span class="number">0</span>;</div><div class="line">    sort(dis,dis+Siz);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;Siz;++i) &#123;</div><div class="line">        res+=upper_bound(dis+<span class="number">1</span>+i,dis+Siz,K-dis[i])-(dis+<span class="number">1</span>+i);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> v)</span></span></div><div class="line">&#123;</div><div class="line">    Cal_Size(v,<span class="number">-1</span>);</div><div class="line">    <span class="keyword">int</span> cv=Find_Centroid(v,<span class="number">-1</span>,siz[v]).sec;</div><div class="line">    Isc[cv]=<span class="literal">true</span>;</div><div class="line"> </div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[cv];i;i=nxt[i]) &#123;</div><div class="line">        <span class="keyword">int</span> u=eg[i];</div><div class="line">        <span class="keyword">if</span>(!Isc[u]) solve(u);</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    allsiz=<span class="number">0</span>;all[allsiz++]=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[cv];i;i=nxt[i]) &#123;</div><div class="line">        <span class="keyword">int</span> u=eg[i];</div><div class="line">        <span class="keyword">if</span>(Isc[u]) <span class="keyword">continue</span>;</div><div class="line">        parsiz=<span class="number">0</span>;</div><div class="line">        Cal_Dist(u,cv,W[i]);</div><div class="line">        ans-=Cal_Ans(par,parsiz);</div><div class="line">        <span class="built_in">memcpy</span>(all+allsiz,par,parsiz*(<span class="keyword">sizeof</span>(par[<span class="number">0</span>])));</div><div class="line">        allsiz+=parsiz;</div><div class="line">    &#125;</div><div class="line">    ans+=Cal_Ans(all,allsiz);</div><div class="line">    Isc[cv]=<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    n=readInt();</div><div class="line">    <span class="keyword">int</span> u,v,w;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n<span class="number">-1</span>;i++) &#123;</div><div class="line">        u=readInt(),v=readInt(),w=readInt();</div><div class="line">        addedge(u,v,w);</div><div class="line">    &#125;</div><div class="line">    K=readInt();</div><div class="line">    solve(<span class="number">1</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -454,6 +459,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/bzoj/" rel="tag"># bzoj</a>
+          
+            <a href="/tags/分治/" rel="tag"># 分治</a>
+          
+        </div>
+      
 
       
       
@@ -463,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/24/fhq-treap/" rel="next" title="fhq_treap">
-                <i class="fa fa-chevron-left"></i> fhq_treap
+              <a href="/2017/11/25/hdu5306/" rel="next" title="hdu5306 Gorgeous Sequence">
+                <i class="fa fa-chevron-left"></i> hdu5306 Gorgeous Sequence
               </a>
             
           </div>
@@ -472,10 +485,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/26/cf855C/" rel="prev" title="cf855C Helga Hufflepuff's Cup(dp)">
-                cf855C Helga Hufflepuff's Cup(dp) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -524,17 +533,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -587,22 +587,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例"><span class="nav-number">2.</span> <span class="nav-text">样例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sample1"><span class="nav-number">2.1.</span> <span class="nav-text">sample1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sample2"><span class="nav-number">2.2.</span> <span class="nav-text">sample2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">3.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂度"><span class="nav-number">4.</span> <span class="nav-text">复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序"><span class="nav-number">5.</span> <span class="nav-text">程序</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -733,7 +717,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 95670, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 95670, xid: "2017/09/26/cf817F/"});
+		_hcwp.push({widget:"Stream", widget_id: 95670, xid: "2017/12/01/bzoj1468/"});
 		
 
 		(function() {
