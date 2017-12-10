@@ -93,7 +93,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="bzoj,树分治," />
 
 
 
@@ -109,12 +109,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="nonamenotitle&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/dfs/index.html">
+<meta name="description" content="题意：问一棵带权树上路径长度为$3$的倍数的点对有多少对，其中包括自身与自身，两点交换算两个点对。 点分治模板题，分治时记录模$3$的余数为$0,1,2$的分别有多少个点，分子树向前统计即可，最后加上重复和自反的点对。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495">
+<meta name="keywords" content="bzoj,树分治">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bzoj2152 聪聪可可">
+<meta property="og:url" content="http://yoursite.com/2017/12/10/bzoj2152/index.html">
 <meta property="og:site_name" content="nonamenotitle&#39;s blog">
+<meta property="og:description" content="题意：问一棵带权树上路径长度为$3$的倍数的点对有多少对，其中包括自身与自身，两点交换算两个点对。 点分治模板题，分治时记录模$3$的余数为$0,1,2$的分别有多少个点，分子树向前统计即可，最后加上重复和自反的点对。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495">
+<meta property="og:updated_time" content="2017-12-10T04:28:00.946Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nonamenotitle&#39;s blog">
+<meta name="twitter:title" content="bzoj2152 聪聪可可">
+<meta name="twitter:description" content="题意：问一棵带权树上路径长度为$3$的倍数的点对有多少对，其中包括自身与自身，两点交换算两个点对。 点分治模板题，分治时记录模$3$的余数为$0,1,2$的分别有多少个点，分子树向前统计即可，最后加上重复和自反的点对。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495">
 
 
 
@@ -142,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/dfs/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/10/bzoj2152/"/>
 
 
 
 
 
-  <title>Tag: dfs | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>bzoj2152 聪聪可可 | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -173,7 +178,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -321,72 +326,164 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>dfs<small>Tag</small>
-      </h1>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/11/25/hdu5306/" itemprop="url">
-              
-                <span itemprop="name">hdu5306 Gorgeous Sequence</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-25T22:37:08+08:00"
-              content="2017-11-25" >
-          11-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/17/firefroz/" itemprop="url">
-              
-                <span itemprop="name">模拟退火</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-17T22:37:08+08:00"
-              content="2017-10-17" >
-          10-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </div>
 
   
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/10/bzoj2152/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nonamenotitle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nonamenotitle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">bzoj2152 聪聪可可</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-10T12:23:08+08:00">
+                2017-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/10/bzoj2152/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/12/10/bzoj2152/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>题意：问一棵带权树上路径长度为$3$的倍数的点对有多少对，其中包括自身与自身，两点交换算两个点对。</p>
+<p>点分治模板题，分治时记录模$3$的余数为$0,1,2$的分别有多少个点，分子树向前统计即可，最后加上重复和自反的点对。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">readInt</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">char</span> c;<span class="keyword">int</span> tmp=<span class="number">0</span>,x=<span class="number">1</span>;c=getchar();</div><div class="line">    <span class="keyword">while</span>(c&gt;<span class="string">'9'</span> || c&lt;<span class="string">'0'</span>) &#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>) x=<span class="number">-1</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(c&gt;=<span class="string">'0'</span> &amp;&amp; c&lt;=<span class="string">'9'</span>) &#123;tmp=tmp*<span class="number">10</span>+c-<span class="string">'0'</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> tmp*x;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;<span class="keyword">return</span> b==<span class="number">0</span>?a:gcd(b,a%b);&#125;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">20000</span>+<span class="number">5</span>;</div><div class="line"><span class="keyword">int</span> head[maxn],eg[maxn&lt;&lt;<span class="number">1</span>],nxt[maxn&lt;&lt;<span class="number">1</span>],W[maxn&lt;&lt;<span class="number">1</span>],tot=<span class="number">0</span>,n;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span></span></div><div class="line">&#123;</div><div class="line">    eg[++tot]=v;nxt[tot]=head[u];W[tot]=w;head[u]=tot;</div><div class="line">    eg[++tot]=u;nxt[tot]=head[v];W[tot]=w;head[v]=tot;</div><div class="line">&#125;</div><div class="line"><span class="keyword">bool</span> Isc[maxn];</div><div class="line"><span class="keyword">int</span> siz[maxn],dis[<span class="number">3</span>],par[<span class="number">3</span>],Ans;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Cal_Size</span><span class="params">(<span class="keyword">int</span> v,<span class="keyword">int</span> fa)</span></span></div><div class="line">&#123;</div><div class="line">    siz[v]=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[v];i;i=nxt[i]) &#123;</div><div class="line">        <span class="keyword">int</span> u=eg[i];</div><div class="line">        <span class="keyword">if</span>(u!=fa &amp;&amp; !Isc[u]) Cal_Size(u,v),siz[v]+=siz[u];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span> ,<span class="keyword">int</span> &gt; pii;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> fir first</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> sec second</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></div><div class="line"><span class="function">pii <span class="title">Find_Cent</span><span class="params">(<span class="keyword">int</span> v,<span class="keyword">int</span> fa,<span class="keyword">int</span> N)</span></span></div><div class="line">&#123;</div><div class="line">    pii ret=MP(INT_MAX,<span class="number">-1</span>);</div><div class="line">    <span class="keyword">int</span> maxsiz=<span class="number">0</span>,sum=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[v];i;i=nxt[i]) &#123;</div><div class="line">        <span class="keyword">int</span> u=eg[i];</div><div class="line">        <span class="keyword">if</span>(u==fa || Isc[u]) <span class="keyword">continue</span>;</div><div class="line">        ret=min(ret,Find_Cent(u,v,N));</div><div class="line">        maxsiz=max(maxsiz,siz[u]);</div><div class="line">        sum+=siz[u];</div><div class="line">    &#125;</div><div class="line">    maxsiz=max(maxsiz,N-sum);</div><div class="line">    ret=min(ret,MP(maxsiz,v));</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Cal_Dist</span><span class="params">(<span class="keyword">int</span> v,<span class="keyword">int</span> fa,<span class="keyword">int</span> precost)</span></span></div><div class="line">&#123;</div><div class="line">    par[precost%<span class="number">3</span>]++;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[v];i;i=nxt[i]) &#123;</div><div class="line">        <span class="keyword">int</span> u=eg[i];</div><div class="line">        <span class="keyword">if</span>(u==fa || Isc[u]) <span class="keyword">continue</span>;</div><div class="line">        Cal_Dist(u,v,precost+W[i]);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">upd</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> ret=<span class="number">0</span>;</div><div class="line">    ret+=dis[<span class="number">0</span>]*par[<span class="number">0</span>];</div><div class="line">    ret+=dis[<span class="number">1</span>]*par[<span class="number">2</span>];</div><div class="line">    ret+=dis[<span class="number">2</span>]*par[<span class="number">1</span>];</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> v)</span></span></div><div class="line">&#123;</div><div class="line">    Cal_Size(v,<span class="number">-1</span>);</div><div class="line">    <span class="keyword">int</span> cv=Find_Cent(v,<span class="number">-1</span>,siz[v]).sec;</div><div class="line">    Isc[cv]=<span class="literal">true</span>;</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[cv];i;i=nxt[i]) &#123;</div><div class="line">        <span class="keyword">int</span> u=eg[i];</div><div class="line">        <span class="keyword">if</span>(!Isc[u]) solve(u);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">memset</span>(dis,<span class="number">0</span>,<span class="keyword">sizeof</span>(dis));</div><div class="line">    dis[<span class="number">0</span>]++;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[cv];i;i=nxt[i]) &#123;</div><div class="line">        <span class="keyword">int</span> u=eg[i];</div><div class="line">        <span class="keyword">if</span>(!Isc[u]) &#123;</div><div class="line">            <span class="built_in">memset</span>(par,<span class="number">0</span>,<span class="keyword">sizeof</span>(par));</div><div class="line">            Cal_Dist(u,cv,W[i]%<span class="number">3</span>);</div><div class="line">            Ans+=upd();</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++) dis[j]+=par[j];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    Isc[cv]=<span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    n=readInt();</div><div class="line">    <span class="keyword">int</span> u,v,w;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n<span class="number">-1</span>;i++) &#123;</div><div class="line">        u=readInt(),v=readInt(),w=readInt();</div><div class="line">        addedge(u,v,w);</div><div class="line">    &#125;</div><div class="line">    solve(<span class="number">1</span>);</div><div class="line">    <span class="keyword">int</span> A=Ans*<span class="number">2</span>+n,B=n*n;</div><div class="line">    <span class="keyword">int</span> gd=gcd(A,B);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d/%d\n"</span>,A/gd,B/gd);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/bzoj/" rel="tag"># bzoj</a>
+          
+            <a href="/tags/树分治/" rel="tag"># 树分治</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/03/cf896C/" rel="next" title="cf896C Willem, Chtholly and Seniorious">
+                <i class="fa fa-chevron-left"></i> cf896C Willem, Chtholly and Seniorious
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -394,6 +491,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -569,10 +672,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -596,6 +699,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 95670, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 95670, xid: "2017/12/10/bzoj2152/"});
 		
 
 		(function() {
