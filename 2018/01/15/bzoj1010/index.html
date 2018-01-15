@@ -109,17 +109,17 @@
 
 
 
-<meta name="description" content="题意：给定一个序列${C_i}$，将这个序列分段，其中每段装入一个容器，$[i,j]$这段的容器的长度为$\sum_{k=j}^{i} C_k +i-j-1$，问序列中所有数全部分段装容器以后的最下花费。 容易得到最朴素的式子$dp[i]=min{j=0}^{i-1} (dp[j]+(i-j-1+\sum{k=j+1}^{i} C_{k}-L)^2)$ 记录前缀和为$sum[i]$可以得到$dp[">
+<meta name="description" content="题意：给定一个序列${C_i}$，将这个序列分段，其中每段装入一个容器，$[i,j]$这段的容器的长度为$\sum_{k=j}^{i} C_k +i-j-1$，问序列中所有数全部分段装容器以后的最下花费。 容易得到最朴素的式子$dp[i]=min_{j=0}^{i-1} (dp[j]+(i-j-1+\sum_{k=j+1}^{i} {C_k}-L)^2)$ 记录前缀和为$sum[i]$可以得到$d">
 <meta name="keywords" content="bzoj,dp,斜率优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bzoj1010 [HNOI2008] 玩具装箱toy">
 <meta property="og:url" content="http://yoursite.com/2018/01/15/bzoj1010/index.html">
 <meta property="og:site_name" content="nonamenotitle&#39;s blog">
-<meta property="og:description" content="题意：给定一个序列${C_i}$，将这个序列分段，其中每段装入一个容器，$[i,j]$这段的容器的长度为$\sum_{k=j}^{i} C_k +i-j-1$，问序列中所有数全部分段装容器以后的最下花费。 容易得到最朴素的式子$dp[i]=min{j=0}^{i-1} (dp[j]+(i-j-1+\sum{k=j+1}^{i} C_{k}-L)^2)$ 记录前缀和为$sum[i]$可以得到$dp[">
-<meta property="og:updated_time" content="2018-01-15T15:06:40.234Z">
+<meta property="og:description" content="题意：给定一个序列${C_i}$，将这个序列分段，其中每段装入一个容器，$[i,j]$这段的容器的长度为$\sum_{k=j}^{i} C_k +i-j-1$，问序列中所有数全部分段装容器以后的最下花费。 容易得到最朴素的式子$dp[i]=min_{j=0}^{i-1} (dp[j]+(i-j-1+\sum_{k=j+1}^{i} {C_k}-L)^2)$ 记录前缀和为$sum[i]$可以得到$d">
+<meta property="og:updated_time" content="2018-01-15T15:10:41.555Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bzoj1010 [HNOI2008] 玩具装箱toy">
-<meta name="twitter:description" content="题意：给定一个序列${C_i}$，将这个序列分段，其中每段装入一个容器，$[i,j]$这段的容器的长度为$\sum_{k=j}^{i} C_k +i-j-1$，问序列中所有数全部分段装容器以后的最下花费。 容易得到最朴素的式子$dp[i]=min{j=0}^{i-1} (dp[j]+(i-j-1+\sum{k=j+1}^{i} C_{k}-L)^2)$ 记录前缀和为$sum[i]$可以得到$dp[">
+<meta name="twitter:description" content="题意：给定一个序列${C_i}$，将这个序列分段，其中每段装入一个容器，$[i,j]$这段的容器的长度为$\sum_{k=j}^{i} C_k +i-j-1$，问序列中所有数全部分段装容器以后的最下花费。 容易得到最朴素的式子$dp[i]=min_{j=0}^{i-1} (dp[j]+(i-j-1+\sum_{k=j+1}^{i} {C_k}-L)^2)$ 记录前缀和为$sum[i]$可以得到$d">
 
 
 
@@ -413,7 +413,7 @@
 
       
         <p>题意：给定一个序列${C_i}$，将这个序列分段，其中每段装入一个容器，$[i,j]$这段的容器的长度为$\sum_{k=j}^{i} C_k +i-j-1$，问序列中所有数全部分段装容器以后的最下花费。</p>
-<p>容易得到最朴素的式子$dp[i]=min<em>{j=0}^{i-1} (dp[j]+(i-j-1+\sum</em>{k=j+1}^{i} C_{k}-L)^2)$</p>
+<p>容易得到最朴素的式子$dp[i]=min_{j=0}^{i-1} (dp[j]+(i-j-1+\sum_{k=j+1}^{i} {C_k}-L)^2)$</p>
 <p>记录前缀和为$sum[i]$可以得到$dp[i]=min_{j=0}^{i-1} (dp[j]+(i-j-1+sum[i]-sum[j]-L)^2)$</p>
 <p>直接算复杂度为$O(n^2)$，考虑斜率优化</p>
 <p>上式为$dp[i]=min_{j=0}^{i-1} (dp[j]+(i+sum[i]-j-sum[j]-L-1)^2)$</p>
