@@ -93,7 +93,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="gym,math,计算几何,simpson," />
 
 
 
@@ -109,12 +109,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="nonamenotitle&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/bruteforce/index.html">
+<meta name="description" content="题意：有一个侧棱与z轴平行的棱柱$P_1$和一个侧棱与y轴平行的棱柱$P_2$。他们都向两端无限延伸，底面分别是包含M个顶点和N个顶点的凸多边形，其中第i个顶点的坐标分别是$(X_{1i},Y_{1i})$和$(X_{2i}, Z_{2i})$。计算这两个棱柱公共部分的体积。 在$x$轴上对两棱柱切片，可以得到切到的两棱柱的宽度，并且两者相乘是矩形。在$x$轴方向上对面积求积分即可。其中求积分可用">
+<meta name="keywords" content="gym,math,计算几何,simpson">
+<meta property="og:type" content="article">
+<meta property="og:title" content="aoj1313 Intersection of Two Prisms">
+<meta property="og:url" content="http://yoursite.com/2018/01/18/aoj1313/index.html">
 <meta property="og:site_name" content="nonamenotitle&#39;s blog">
+<meta property="og:description" content="题意：有一个侧棱与z轴平行的棱柱$P_1$和一个侧棱与y轴平行的棱柱$P_2$。他们都向两端无限延伸，底面分别是包含M个顶点和N个顶点的凸多边形，其中第i个顶点的坐标分别是$(X_{1i},Y_{1i})$和$(X_{2i}, Z_{2i})$。计算这两个棱柱公共部分的体积。 在$x$轴上对两棱柱切片，可以得到切到的两棱柱的宽度，并且两者相乘是矩形。在$x$轴方向上对面积求积分即可。其中求积分可用">
+<meta property="og:updated_time" content="2018-01-18T14:05:55.969Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nonamenotitle&#39;s blog">
+<meta name="twitter:title" content="aoj1313 Intersection of Two Prisms">
+<meta name="twitter:description" content="题意：有一个侧棱与z轴平行的棱柱$P_1$和一个侧棱与y轴平行的棱柱$P_2$。他们都向两端无限延伸，底面分别是包含M个顶点和N个顶点的凸多边形，其中第i个顶点的坐标分别是$(X_{1i},Y_{1i})$和$(X_{2i}, Z_{2i})$。计算这两个棱柱公共部分的体积。 在$x$轴上对两棱柱切片，可以得到切到的两棱柱的宽度，并且两者相乘是矩形。在$x$轴方向上对面积求积分即可。其中求积分可用">
 
 
 
@@ -142,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/bruteforce/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/18/aoj1313/"/>
 
 
 
 
 
-  <title>Tag: bruteforce | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>aoj1313 Intersection of Two Prisms | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -173,7 +178,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -321,44 +326,168 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>bruteforce<small>Tag</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/18/aoj1313/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nonamenotitle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nonamenotitle's blog">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">aoj1313 Intersection of Two Prisms</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-18T22:37:08+08:00">
+                2018-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/18/aoj1313/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/18/aoj1313/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>题意：有一个侧棱与z轴平行的棱柱$P_1$和一个侧棱与y轴平行的棱柱$P_2$。他们都向两端无限延伸，底面分别是包含M个顶点和N个顶点的凸多边形，其中第i个顶点的坐标分别是$(X_{1i},Y_{1i})$和$(X_{2i}, Z_{2i})$。计算这两个棱柱公共部分的体积。</p>
+<p>在$x$轴上对两棱柱切片，可以得到切到的两棱柱的宽度，并且两者相乘是矩形。在$x$轴方向上对面积求积分即可。其中求积分可用抛物线法求近似值，即$\int_a^b f(x)dx \approx \frac{b-a}{6}(f(a)+4f(\frac{a+b}{2})+f(b))$。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxm=<span class="number">100</span>+<span class="number">5</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100</span>+<span class="number">5</span>;</div><div class="line"><span class="keyword">int</span> m,n;</div><div class="line"><span class="keyword">double</span> X1[maxn],Y1[maxn],X2[maxn],Z2[maxn];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getmod</span><span class="params">(<span class="keyword">int</span> id,<span class="keyword">int</span> mo)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(id==mo) <span class="keyword">return</span> mo;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">return</span> id%mo;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">wid</span><span class="params">(<span class="keyword">double</span> *X,<span class="keyword">double</span> *Y,<span class="keyword">int</span> N,<span class="keyword">double</span> x)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">double</span> x1,x2,y1,y2;</div><div class="line">    <span class="keyword">double</span> L=<span class="number">1e20</span>,R=<span class="number">-1e20</span>,tmp=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++) &#123;</div><div class="line">        x1=X[i],y1=Y[i],x2=X[getmod(i+<span class="number">1</span>,N)],y2=Y[getmod(i+<span class="number">1</span>,N)];</div><div class="line">        <span class="keyword">if</span>((x-x1)*(x-x2)&lt;=<span class="number">0</span>) &#123;</div><div class="line">            tmp=y1+(y2-y1)*(x-x1)/(x2-x1);</div><div class="line">            L=min(L,tmp);</div><div class="line">            R=max(R,tmp);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> max(<span class="number">0.0</span>,R-L);</div><div class="line">&#125;</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">double</span> &gt; xs;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">double</span> L1,L2,R1,R2;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;m,&amp;n)==<span class="number">2</span>) &#123;</div><div class="line">        <span class="keyword">if</span>(!m &amp;&amp; !n) <span class="keyword">break</span>;</div><div class="line">        xs.clear();</div><div class="line">        L1=<span class="number">1e20</span>,L2=<span class="number">1e20</span>,R1=<span class="number">-1e20</span>,R2=<span class="number">-1e20</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++) <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>,&amp;X1[i],&amp;Y1[i]),xs.push_back(X1[i]),L1=min(L1,X1[i]),R1=max(R1,X1[i]);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>,&amp;X2[i],&amp;Z2[i]),xs.push_back(X2[i]),L2=min(L2,X2[i]),R2=max(R2,X2[i]);</div><div class="line">        sort(xs.begin(),xs.end());</div><div class="line">        <span class="keyword">double</span> a,b,c,f1,f2,f3,ans=<span class="number">0.0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i+<span class="number">1</span>&lt;(<span class="keyword">int</span>)xs.size();i++) &#123;</div><div class="line">            a=xs[i],b=xs[i+<span class="number">1</span>],c=(a+b)/<span class="number">2.0</span>;</div><div class="line">            <span class="keyword">if</span>(c&gt;=L1 &amp;&amp; c&lt;=R1 &amp;&amp; c&gt;=L2 &amp;&amp; c&lt;=R2) &#123;</div><div class="line">                f1=wid(X1,Y1,m,a)*wid(X2,Z2,n,a);</div><div class="line">                f2=wid(X1,Y1,m,b)*wid(X2,Z2,n,b);</div><div class="line">                f3=wid(X1,Y1,m,c)*wid(X2,Z2,n,c);</div><div class="line">                ans+=(b-a)/<span class="number">6</span>*(f1+<span class="number">4</span>*f3+f2);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%.10f\n"</span>,ans);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/11/21/100861J/" itemprop="url">
-              
-                <span itemprop="name">100861J Jig-saw Puzzle</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-21T22:37:08+08:00"
-              content="2017-11-21" >
-          11-21
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/gym/" rel="tag"># gym</a>
+          
+            <a href="/tags/math/" rel="tag"># math</a>
+          
+            <a href="/tags/计算几何/" rel="tag"># 计算几何</a>
+          
+            <a href="/tags/simpson/" rel="tag"># simpson</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/17/bzoj1069/" rel="next" title="bzoj1069 [SCOI2007] 最大土地面积">
+                <i class="fa fa-chevron-left"></i> bzoj1069 [SCOI2007] 最大土地面积
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -366,6 +495,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -541,10 +676,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -568,6 +703,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 95670, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 95670, xid: "2018/01/18/aoj1313/"});
 		
 
 		(function() {
