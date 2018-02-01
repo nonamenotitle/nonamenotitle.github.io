@@ -93,7 +93,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="bzoj,math,mobius," />
 
 
 
@@ -109,16 +109,17 @@
 
 
 
-<meta name="description" content="C - Reconciled?首先容易发现给定的2个数，如果要没有相同的动物相邻，那么肯定$n$,$m$的差要$\leq 2$，所以特判此情况；此外考虑插空法，那么答案就是$n! \times C(m-n+1,2) \times m!$。12345678910111213141516171819202122232425262728293031323334353637383940#include &amp;">
+<meta name="description" content="题意：对于正整数n，定义f(n)为n所含质因子的最大幂指数。例如f(1960)=f($2^3 \times 5^1 \times 7^2$)=3, f(10007)=1, f(1)=0。给定正整数a,b，求$\sum_{i=1}^a \sum _{j=1}^b f(gcd(i,j))$ 。 题解： $$\sum_{i=1}^a \sum _{j=1}^b f(gcd(i,j)) =\sum_{d=">
+<meta name="keywords" content="bzoj,math,mobius">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AtCoder Regular Contest 076(C&#x2F;D)">
-<meta property="og:url" content="http://yoursite.com/2017/06/25/atcoder-regular076/index.html">
+<meta property="og:title" content="bzoj3309 DZY Loves Math">
+<meta property="og:url" content="http://yoursite.com/2018/01/31/bzoj3309/index.html">
 <meta property="og:site_name" content="nonamenotitle&#39;s blog">
-<meta property="og:description" content="C - Reconciled?首先容易发现给定的2个数，如果要没有相同的动物相邻，那么肯定$n$,$m$的差要$\leq 2$，所以特判此情况；此外考虑插空法，那么答案就是$n! \times C(m-n+1,2) \times m!$。12345678910111213141516171819202122232425262728293031323334353637383940#include &amp;">
-<meta property="og:updated_time" content="2017-06-24T16:41:25.271Z">
+<meta property="og:description" content="题意：对于正整数n，定义f(n)为n所含质因子的最大幂指数。例如f(1960)=f($2^3 \times 5^1 \times 7^2$)=3, f(10007)=1, f(1)=0。给定正整数a,b，求$\sum_{i=1}^a \sum _{j=1}^b f(gcd(i,j))$ 。 题解： $$\sum_{i=1}^a \sum _{j=1}^b f(gcd(i,j)) =\sum_{d=">
+<meta property="og:updated_time" content="2018-02-01T15:10:45.255Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AtCoder Regular Contest 076(C&#x2F;D)">
-<meta name="twitter:description" content="C - Reconciled?首先容易发现给定的2个数，如果要没有相同的动物相邻，那么肯定$n$,$m$的差要$\leq 2$，所以特判此情况；此外考虑插空法，那么答案就是$n! \times C(m-n+1,2) \times m!$。12345678910111213141516171819202122232425262728293031323334353637383940#include &amp;">
+<meta name="twitter:title" content="bzoj3309 DZY Loves Math">
+<meta name="twitter:description" content="题意：对于正整数n，定义f(n)为n所含质因子的最大幂指数。例如f(1960)=f($2^3 \times 5^1 \times 7^2$)=3, f(10007)=1, f(1)=0。给定正整数a,b，求$\sum_{i=1}^a \sum _{j=1}^b f(gcd(i,j))$ 。 题解： $$\sum_{i=1}^a \sum _{j=1}^b f(gcd(i,j)) =\sum_{d=">
 
 
 
@@ -146,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/25/atcoder-regular076/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/31/bzoj3309/"/>
 
 
 
 
 
-  <title>AtCoder Regular Contest 076(C/D) | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>bzoj3309 DZY Loves Math | nonamenotitle's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -334,8 +335,8 @@
   
   
 
-  <article class="post post-type-atcoder " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/25/atcoder-regular076/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/31/bzoj3309/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nonamenotitle">
@@ -352,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">AtCoder Regular Contest 076(C/D)</h1>
+          <h1 class="post-title" itemprop="name headline">bzoj3309 DZY Loves Math</h1>
         
 
         <div class="post-meta">
@@ -364,8 +365,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-25T00:37:08+08:00">
-                2017-06-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-31T22:37:08+08:00">
+                2018-01-31
               </time>
             
 
@@ -376,6 +377,20 @@
 
           
 
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/31/bzoj3309/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/31/bzoj3309/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
           
 
           
@@ -397,11 +412,46 @@
       
 
       
-        <h2 id="C-Reconciled"><a href="#C-Reconciled" class="headerlink" title="C - Reconciled?"></a><a href="http://arc076.contest.atcoder.jp/tasks/arc076_a" target="_blank" rel="external">C - Reconciled?</a></h2><p>首先容易发现给定的2个数，如果要没有相同的动物相邻，那么肯定$n$,$m$的差要$\leq 2$，所以特判此情况；此外考虑插空法，那么答案就是$n! \times C(m-n+1,2) \times m!$。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"> </div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> mo=<span class="number">1e9</span>+<span class="number">7</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line">ll n,m;</div><div class="line"><span class="function">ll <span class="title">getstep</span><span class="params">(ll n)</span></span></div><div class="line">&#123;</div><div class="line">	ll res=<span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=n;i++) res=(res*i)%mo;</div><div class="line">	<span class="keyword">return</span> res;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">geta</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span></span></div><div class="line">&#123;</div><div class="line">	ll res=<span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(ll i=n-m+<span class="number">1</span>;i&lt;=n;i++) res=(res*i)%mo;</div><div class="line">	<span class="keyword">return</span> res;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;n,&amp;m);</div><div class="line">	<span class="keyword">if</span>(<span class="built_in">abs</span>(n-m)&gt;=<span class="number">2</span>) <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</div><div class="line">	<span class="keyword">else</span>&#123;</div><div class="line">		<span class="keyword">if</span>(m&lt;n) swap(n,m);</div><div class="line">		<span class="keyword">if</span>(m-n==<span class="number">1</span>)</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,((getstep(n)%mo)*(getstep(m)%mo))%mo);</div><div class="line">		<span class="keyword">else</span></div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,((getstep(n)%mo)*(getstep(m)%mo)%mo)*<span class="number">2</span>%mo);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="D-Built"><a href="#D-Built" class="headerlink" title="D - Built?"></a><a href="http://arc076.contest.atcoder.jp/tasks/arc076_b" target="_blank" rel="external">D - Built?</a></h2><p><del>考试的时候因为一些奇怪的记忆写错了生成树，结果超时得很惨QWQ，然后考完试才改对…（我太菜了QWQ）</del></p>
-<p>考虑这个图，由于加的全为无向边，所以这图最终应该是一个生成树。我们考虑加边，由于生成树时需要不断取出最小得边，并且恰好连点数-1条这么多的样子，由于边不可能在$n\leq 100000$的情况下全部存下，所以我们考虑只找到最小的一些边。</p>
-<p>两点间距离$d=min(|a−c|,|b−d|)$，所以我们先按照$x$轴递增次序排序，相邻点加边，可以得到一些最小的、基于$x$坐标差的边；再按$y$排序的话，就可以得到一些最小的、基于$y$坐标差的边。最小的边一定是这些，而这些边的条数肯定大于$n-1$，所以可以生成树。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"> </div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100000</span>+<span class="number">5</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span>&#123;</span><span class="keyword">int</span> x,y,id;&#125;;</div><div class="line">point p[maxn];</div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span>&#123;</span><span class="keyword">int</span> from,to,cost;&#125;;</div><div class="line"><span class="built_in">vector</span>&lt;edge&gt; pool;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">myabs</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> x&lt;<span class="number">0</span>?-x:x;&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmppp</span><span class="params">(edge a,edge b)</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> a.cost&lt;b.cost;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp1</span><span class="params">(point a,point b)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(a.x==b.x) <span class="keyword">return</span> a.y&lt;b.y;</div><div class="line">	<span class="keyword">return</span> a.x&lt;b.x;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp2</span><span class="params">(point a,point b)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(a.y==b.y) <span class="keyword">return</span> a.x&lt;b.x;</div><div class="line">	<span class="keyword">return</span> a.y&lt;b.y;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ge</span>&#123;</span><span class="keyword">int</span> to,cost;&#125;;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cmpp</span>&#123;</span></div><div class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(edge a,edge b)</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> a.cost&gt;b.cost;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">vector</span>&lt;ge&gt; g[maxn];</div><div class="line"><span class="keyword">int</span> f[maxn],rnk[maxn];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getf</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> f[x]==x?f[x]:f[x]=getf(f[x]);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> fu=getf(u),fv=getf(v);</div><div class="line">	<span class="keyword">if</span>(fu==fv) <span class="keyword">return</span>;</div><div class="line">	<span class="keyword">else</span>&#123;</div><div class="line">		<span class="keyword">if</span>(rnk[fu]&gt;rnk[fv])&#123;</div><div class="line">			rnk[fu]+=rnk[fv];rnk[fv]=<span class="number">0</span>;</div><div class="line">			f[fv]=fu;</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			rnk[fv]+=rnk[fu];rnk[fu]=<span class="number">0</span>;</div><div class="line">			f[fu]=fv;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">vector</span>&lt;edge&gt; egs;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;p[i].id=i;<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;p[i].x,&amp;p[i].y);&#125;</div><div class="line">	sort(p+<span class="number">1</span>,p+<span class="number">1</span>+n,cmp1);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</div><div class="line">		egs.push_back((edge)&#123;p[i].id,p[i+<span class="number">1</span>].id,min(myabs(p[i].x-p[i+<span class="number">1</span>].x),myabs(p[i].y-p[i+<span class="number">1</span>].y))&#125;);</div><div class="line">	&#125;</div><div class="line">	sort(p+<span class="number">1</span>,p+<span class="number">1</span>+n,cmp2);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</div><div class="line">		egs.push_back((edge)&#123;p[i].id,p[i+<span class="number">1</span>].id,min(myabs(p[i].x-p[i+<span class="number">1</span>].x),myabs(p[i].y-p[i+<span class="number">1</span>].y))&#125;);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">bool</span> has=<span class="literal">true</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) f[i]=i;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) rnk[i]=<span class="number">1</span>;</div><div class="line">	ll ans=<span class="number">0</span>;</div><div class="line">	sort(egs.begin(),egs.end(),cmppp);</div><div class="line">	<span class="keyword">int</span> lev=n<span class="number">-1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;egs.size();i++)</div><div class="line">	&#123;</div><div class="line">		edge now=egs[i];</div><div class="line">		<span class="keyword">if</span>(getf(now.from)!=getf(now.to))</div><div class="line">		&#123;lev--;merge(now.from,now.to);ans+=now.cost;&#125;</div><div class="line">		<span class="keyword">if</span>(lev==<span class="number">0</span>) <span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>题意：对于正整数n，定义f(n)为n所含质因子的最大幂指数。例如f(1960)=f($2^3 \times 5^1 \times 7^2$)=3, f(10007)=1, f(1)=0。<br>给定正整数a,b，求$\sum_{i=1}^a \sum _{j=1}^b f(gcd(i,j))$ 。</p>
+<p>题解：</p>
+<p>$$\sum_{i=1}^a \sum _{j=1}^b f(gcd(i,j)) =\sum_{d=1}^a f(d) \sum_{a=1}^n\sum_{b=1}^m[gcd(i,j)==d] = \sum _{x=1}^{\lfloor \frac{n}{d}\rfloor } \mu(x) \lfloor \frac{n}{xd}\rfloor \lfloor \frac{m}{xd} \rfloor $$</p>
+<p>令$T=xd$</p>
+<p>$$\begin{aligned} \sum _{x=1}^{\lfloor \frac{n}{d}\rfloor}  \mu(x) \lfloor \frac{n}{xd}\rfloor \lfloor \frac{m}{xd} \rfloor =\sum_{T=1}^n \lfloor \frac{n}{T}\rfloor \lfloor \frac{m}{T} \rfloor \sum_{x|T} \mu(x)f(\frac{T}{x})\end{aligned}$$</p>
+<p>设$g(T)=\sum_{x|T} f(x) \mu(\frac{T}{x})$</p>
+<p>显然如果可以搞出$g$的前缀和一类的东西，就可以每次$\sqrt{n}$处理每次询问了。</p>
+<p>打个表可以发现$g$的结果是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">0</div><div class="line">1</div><div class="line">1</div><div class="line">1</div><div class="line">1</div><div class="line">-1</div><div class="line">1</div><div class="line">1</div><div class="line">1</div><div class="line">-1</div><div class="line">1</div><div class="line">0</div><div class="line">1</div><div class="line">-1</div><div class="line">-1</div><div class="line">1</div><div class="line">1</div><div class="line">0</div><div class="line">1</div><div class="line">0</div><div class="line">-1</div><div class="line">-1</div><div class="line">1</div><div class="line">0</div><div class="line">1</div><div class="line">-1</div><div class="line">1</div><div class="line">0</div><div class="line">1</div><div class="line">1</div></pre></td></tr></table></figure>
+<p>大致上有这样的一个规律：</p>
+<p>对于函数$g(T)$，设$T$有$k$个质因子，如果每个质因子的指数不都相同，那么$g$函数值为0；否则当$k$为奇数的时候，$g=1$，为偶数时，$g=0$。</p>
+<p>证明：</p>
+<p>对于$g(T)=\sum_{d|T} f(d) \mu(\frac{T}{d})$（换成$d$防止混淆），设$T=\prod_{i=1}^k p_i^{x_i}$，$x=\prod_{i=1}^k p_i^{y_i}$，$a=max \{x_i \}$</p>
+<ul>
+<li><p>当所有的$x_i$都等于$a$的时候，因为$\mu(x)$只要$x$里有平方因子就为$0$，所以对$g$有贡献的$d$一定是$T$每个质因子至多除掉一个的时候。</p>
+<ul>
+<li><p>当$d$中还存在至少一个质因子指数为$a$的时候，$f(d)=a$，</p>
+<p>$\sum f(d)\mu(\frac{T}{d})=a\times \sum_{i=1}^k C_{k}^i (-1)^{k-i} = a\times (\sum_{i=0}^k C_{k}^i (-1)^{k-i} - (-1)^k) = a\times (-1)^{k+1}$</p>
+</li>
+<li><p>当$d$中所有质因子指数都为$a-1$的时候，$f(d)=a-1$，</p>
+<p>$\sum f(d)\mu(\frac{T}{d}) = (a-1) \times (-1)^k$</p>
+</li>
+</ul>
+<p>两者相加得到$(-1)^{k+1}$</p>
+</li>
+<li><p>当不是所有的$x_i$都等于$a$的时候</p>
+<ul>
+<li><p>当$d$中还存在一个质因子指数等于$a$的时候，设$T$中有$q$个等于$a$，$f(d)=a$</p>
+<p>$\sum f(d)\mu(\frac{T}{d})=a \times \sum_{i=1}^{q} C_{q}^i (-1)^{q-i} \sum_{j=0}^{k-q}(-1)^j $，$\sum_{j=0}^{k-q}(-1)^j =(1-1)^{k-q}=0$，所以为$0$</p>
+</li>
+<li><p>$f(d)=a-1$h时，</p>
+<p>$\sum f(d) \mu(\frac{T}{d}) = (a-1) \times (-1)^q \sum_{j=0}^{k-q} C_{k-q}^j (-1)^j =0$</p>
+</li>
+</ul>
+<p>两者相加等于$0$</p>
+</li>
+</ul>
+<p>故只有$T$中所有质因子指数相等的时候才有值，值为$(-1)^{k+1}$。</p>
+<p>这样就可以线性筛$g(T)$，由于要处理一个数的次幂的情况，所以可能要有个$log$，求个前缀和，每次询问分块出解即可。复杂度$O(n + \sqrt{n}logn+ q \sqrt{n})$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=(<span class="keyword">int</span>)<span class="number">1e7</span>+<span class="number">5</span>;</div><div class="line"><span class="keyword">int</span> pri[maxn],cnt=<span class="number">0</span>,g[maxn],mu[maxn];</div><div class="line"><span class="keyword">bool</span> vis[maxn];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">sieve</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">memset</span>(g,<span class="number">-1</span>,<span class="keyword">sizeof</span>(g));</div><div class="line">    g[<span class="number">1</span>]=<span class="number">0</span>; mu[<span class="number">1</span>]=<span class="number">1</span>;</div><div class="line">    <span class="keyword">int</span> t=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;maxn;i++) &#123;</div><div class="line">        <span class="keyword">if</span>(!vis[i]) &#123;pri[++cnt]=i;g[i]=<span class="number">1</span>;mu[i]=<span class="number">-1</span>;&#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=cnt &amp;&amp; <span class="number">1l</span>l*i*pri[j]&lt;maxn;j++) &#123;</div><div class="line">            t=pri[j]*i;</div><div class="line">            vis[t]=<span class="literal">true</span>;</div><div class="line">            g[t]=-g[i]; mu[t]=-mu[i];</div><div class="line">            <span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>) &#123;g[t]=<span class="number">0</span>;mu[t]=<span class="number">0</span>;<span class="keyword">break</span>;&#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;maxn;i++) &#123;</div><div class="line">        <span class="keyword">if</span>(mu[i]==<span class="number">0</span>) <span class="keyword">continue</span>;</div><div class="line">        <span class="keyword">if</span>(i&gt;maxn/i) <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i*i;j&lt;maxn;) &#123;</div><div class="line">            g[j]=g[i];</div><div class="line">            <span class="keyword">if</span>(j&gt;maxn/i) <span class="keyword">break</span>;</div><div class="line">            j=j*i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;maxn;i++) g[i]=g[i]+g[i<span class="number">-1</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    sieve();</div><div class="line">    <span class="keyword">int</span> t; <span class="keyword">int</span> n,m;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</div><div class="line">    <span class="keyword">int</span> T=<span class="number">1</span>,las=<span class="number">1</span>;</div><div class="line">    ll res=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> z=<span class="number">0</span>;z&lt;t;z++) &#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</div><div class="line">        <span class="keyword">if</span>(n&gt;m) swap(n,m);</div><div class="line">        T=<span class="number">1</span>,las=<span class="number">1</span>,res=<span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(T&lt;=n) &#123;</div><div class="line">            las=min(n/(n/T),m/(m/T));</div><div class="line">            res+=<span class="number">1l</span>l*(n/T)*(m/T)*<span class="number">1l</span>l*(g[las]-g[T<span class="number">-1</span>]);</div><div class="line">            T=las+<span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,res);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -429,6 +479,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/bzoj/" rel="tag"># bzoj</a>
+          
+            <a href="/tags/math/" rel="tag"># math</a>
+          
+            <a href="/tags/mobius/" rel="tag"># mobius</a>
+          
+        </div>
+      
 
       
       
@@ -438,8 +498,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/21/string-similarity-and-mindescription/" rel="next" title="字符串同构与最小表示法">
-                <i class="fa fa-chevron-left"></i> 字符串同构与最小表示法
+              <a href="/2018/01/30/bzoj4407/" rel="next" title="bzoj4407 于神之怒加强版">
+                <i class="fa fa-chevron-left"></i> bzoj4407 于神之怒加强版
               </a>
             
           </div>
@@ -447,10 +507,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/27/bzoj1040/" rel="prev" title="bzoj1040 [ZJOI2008]骑士(环套树+树形dp)">
-                bzoj1040 [ZJOI2008]骑士(环套树+树形dp) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -474,6 +530,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -493,17 +555,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -556,22 +609,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Reconciled"><span class="nav-number">1.</span> <span class="nav-text">C - Reconciled?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D-Built"><span class="nav-number">2.</span> <span class="nav-text">D - Built?</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -701,6 +738,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 95670, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 95670, xid: "2018/01/31/bzoj3309/"});
 		
 
 		(function() {
